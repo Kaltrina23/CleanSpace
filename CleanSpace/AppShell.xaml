@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<Shell
+    x:Class="CleanSpace.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:CleanSpace"
+    xmlns:auth="clr-namespace:CleanSpace.Views.Auth"
+    xmlns:home="clr-namespace:CleanSpace.Views.Home"
+    Shell.NavBarIsVisible="False"
+
+    Title="CleanSpace">
+
+    <ShellContent
+        Title="login"
+        ContentTemplate="{DataTemplate auth:LoginPage}" />
+
+    <ShellContent
+         Title="homeUtente"
+         ContentTemplate="{DataTemplate home:HomeUtente}" />
+
+    <ShellContent
+         Title="homeOperatore"
+         ContentTemplate="{DataTemplate home:HomeOperatore}" />
+
+</Shell>
+
+    

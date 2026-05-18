@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<ContentPage
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="CleanSpace.Views.Segnala.InviaSegnalazione"
+    BackgroundColor="#F8FFF1"
+    NavigationPage.HasNavigationBar="False">
+
+    <ScrollView>
+
+        <VerticalStackLayout
+            Padding="0"
+            Spacing="0">
+
+            <!-- HEADER -->
+            <Grid HeightRequest="70">
+
+                <Frame
+                    BackgroundColor="#D9F99D"
+                    CornerRadius="0"
+                    HasShadow="False"
+                    Padding="0"/>
+
+                <VerticalStackLayout
+                    Padding="5,5,25,20"
+                    Spacing="10">
+
+                    <HorizontalStackLayout
+                        Spacing="12">
+
+                        <Image
+                            Source="logo2.png"
+                            HeightRequest="75"
+                            WidthRequest="75"
+                            Aspect="AspectFit"/>
+
+                        <VerticalStackLayout
+                            VerticalOptions="Center"
+                            Spacing="0">
+
+                            <Label
+                                Text="Nuova Segnalazione"
+                                FontSize="20"
+                                FontAttributes="Bold"
+                                TextColor="#1F2937"/>
+                        </VerticalStackLayout>
+
+                    </HorizontalStackLayout>
+
+                </VerticalStackLayout>
+
+            </Grid>
+
+            <!-- CONTENUTO -->
+            <VerticalStackLayout
+                Padding="25,20,20,20"
+                Spacing="20">
+
+                <!-- POSIZIONE -->
+                <Frame
+                    CornerRadius="24"
+                    Padding="20"
+                    BackgroundColor="White"
+                    BorderColor="#E5E7EB"
+                    HasShadow="False">
+
+                    <VerticalStackLayout
+                        Spacing="8">
+
+                        <Label
+                            Text="📍 Posizione GPS"
+                            FontAttributes="Bold"
+                            FontSize="16"
+                            TextColor="#365314"/>
+
+                        <Label
+                            Text="{Binding Posizione}"
+                            FontSize="14"
+                            TextColor="#374151"/>
+                    </VerticalStackLayout>
+
+                </Frame>
+
+                <!-- FOTO -->
+                <Frame
+                    CornerRadius="24"
+                    Padding="20"
+                    BackgroundColor="White"
+                    BorderColor="#E5E7EB"
+                    HasShadow="False">
+
+                    <VerticalStackLayout
+                        Spacing="18">
+
+
+                        <Button
+                            Text="Scatta Foto"
+                            Command="{Binding ScattaFotoCommand}"
+                            HeightRequest="40"
+                            CornerRadius="18"
+                            BackgroundColor="#A3D214"
+                            TextColor="White"
+                            FontAttributes="Bold"/>
+
+                        <Frame
+                            Padding="0"
+                            CornerRadius="18"
+                            IsClippedToBounds="True"
+                            BorderColor="#E5E7EB"
+                            HasShadow="False">
+
+                            <Image
+                                Source="{Binding FotoPreview}"
+                                HeightRequest="80"
+                                Aspect="AspectFill"/>
+                        </Frame>
+
+                    </VerticalStackLayout>
+
+                </Frame>
+
+                <!-- DESCRIZIONE -->
+                <Frame
+                    CornerRadius="24"
+                    Padding="20"
+                    BackgroundColor="White"
+                    BorderColor="#E5E7EB"
+                    HasShadow="False">
+
+                    <VerticalStackLayout
+                        Spacing="12">
+
+                        <Label
+                            Text="📝 Descrizione"
+                            FontAttributes="Bold"
+                            FontSize="16"
+                            TextColor="#365314"/>
+
+                        <Editor
+                            Placeholder="Descrivi il problema riscontrato..."
+                            Text="{Binding Nota}"
+                            HeightRequest="100"
+                            BackgroundColor="#F9FAFB"
+                            TextColor="#1F2937"
+                            PlaceholderColor="#9CA3AF"/>
+                    </VerticalStackLayout>
+
+                </Frame>
+
+                <!-- CAMPI GUEST -->
+                <Frame
+                    IsVisible="{Binding IsGuest}"
+                    CornerRadius="24"
+                    Padding="20"
+                    BackgroundColor="White"
+                    BorderColor="#E5E7EB"
+                    HasShadow="False">
+
+                    <VerticalStackLayout
+                        Spacing="16">
+
+                        <Label
+                            Text="👤 Dati personali"
+                            FontAttributes="Bold"
+                            FontSize="16"
+                            TextColor="#365314"/>
+
+                        <Entry
+                            Placeholder="Nome"
+                            Text="{Binding OspiteNome}"
+                            BackgroundColor="#F9FAFB"
+                            TextColor="#111827"
+                            PlaceholderColor="#9CA3AF"/>
+
+                        <Entry
+                            Placeholder="Cognome"
+                            Text="{Binding OspiteCognome}"
+                            BackgroundColor="#F9FAFB"
+                            TextColor="#111827"
+                            PlaceholderColor="#9CA3AF"/>
+
+                        <Entry
+                            Placeholder="Email"
+                            Text="{Binding OspiteEmail}"
+                            Keyboard="Email"
+                            BackgroundColor="#F9FAFB"
+                            TextColor="#111827"
+                            PlaceholderColor="#9CA3AF"/>
+                    </VerticalStackLayout>
+
+                </Frame>
+
+                <!-- BOTTONE INVIA -->
+                <Button
+                    Text="Invia Segnalazione"
+                    Command="{Binding InviaCommand}"
+                    HeightRequest="42"
+                    CornerRadius="30"
+                    BackgroundColor="#A3D214"
+                    TextColor="White"
+                    FontSize="18"
+                    FontAttributes="Bold"/>
+
+                <!-- LOADING -->
+                <ActivityIndicator
+                    IsRunning="{Binding IsBusy}"
+                    IsVisible="{Binding IsBusy}"
+                    Color="#4D7C0F"
+                    HeightRequest="40"/>
+
+            </VerticalStackLayout>
+
+        </VerticalStackLayout>
+
+    </ScrollView>
+
+</ContentPage>

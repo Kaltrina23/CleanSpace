@@ -1,0 +1,108 @@
+is_global = true
+build_property.EnableAotAnalyzer = 
+build_property.EnableSingleFileAnalyzer = true
+build_property.EnableTrimAnalyzer = false
+build_property.IncludeAllContentForSelfExtract = 
+build_property.MvvmToolkitEnableINotifyPropertyChangingSupport = true
+build_property._MvvmToolkitIsUsingWindowsRuntimePack = false
+build_property.CsWinRTComponent = 
+build_property.CsWinRTAotOptimizerEnabled = 
+build_property.CsWinRTAotWarningLevel = 
+build_property.TargetFramework = net9.0-android
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = 
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = false
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = CleanSpace
+build_property.ProjectDir = C:\Users\stage-karucaj\source\repos\CleanSpace\CleanSpace\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 
+build_property.EffectiveAnalysisLevelStyle = 9.0
+build_property.EnableCodeStyleSeverity = 
+
+[C:/Users/stage-karucaj/source/repos/CleanSpace/CleanSpace/App.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = CleanSpace.App.xaml
+build_metadata.AdditionalFiles.TargetPath = App.xaml
+build_metadata.AdditionalFiles.RelativePath = App.xaml
+
+[C:/Users/stage-karucaj/source/repos/CleanSpace/CleanSpace/AppShell.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = CleanSpace.AppShell.xaml
+build_metadata.AdditionalFiles.TargetPath = AppShell.xaml
+build_metadata.AdditionalFiles.RelativePath = AppShell.xaml
+
+[C:/Users/stage-karucaj/source/repos/CleanSpace/CleanSpace/MainPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = CleanSpace.MainPage.xaml
+build_metadata.AdditionalFiles.TargetPath = MainPage.xaml
+build_metadata.AdditionalFiles.RelativePath = MainPage.xaml
+
+[C:/Users/stage-karucaj/source/repos/CleanSpace/CleanSpace/Resources/Styles/BorderStyles.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = CleanSpace.Resources.Styles.BorderStyles.xaml
+build_metadata.AdditionalFiles.TargetPath = Resources\Styles\BorderStyles.xaml
+build_metadata.AdditionalFiles.RelativePath = Resources\Styles\BorderStyles.xaml
+
+[C:/Users/stage-karucaj/source/repos/CleanSpace/CleanSpace/Resources/Styles/ButtonStyles.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = CleanSpace.Resources.Styles.ButtonStyles.xaml
+build_metadata.AdditionalFiles.TargetPath = Resources\Styles\ButtonStyles.xaml
+build_metadata.AdditionalFiles.RelativePath = Resources\Styles\ButtonStyles.xaml
+
+[C:/Users/stage-karucaj/source/repos/CleanSpace/CleanSpace/Resources/Styles/Colors.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = CleanSpace.Resources.Styles.Colors.xaml
+build_metadata.AdditionalFiles.TargetPath = Resources\Styles\Colors.xaml
+build_metadata.AdditionalFiles.RelativePath = Resources\Styles\Colors.xaml
+
+[C:/Users/stage-karucaj/source/repos/CleanSpace/CleanSpace/Resources/Styles/EntryStyles.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = CleanSpace.Resources.Styles.EntryStyles.xaml
+build_metadata.AdditionalFiles.TargetPath = Resources\Styles\EntryStyles.xaml
+build_metadata.AdditionalFiles.RelativePath = Resources\Styles\EntryStyles.xaml
+
+[C:/Users/stage-karucaj/source/repos/CleanSpace/CleanSpace/Resources/Styles/LabelStyles.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = CleanSpace.Resources.Styles.LabelStyles.xaml
+build_metadata.AdditionalFiles.TargetPath = Resources\Styles\LabelStyles.xaml
+build_metadata.AdditionalFiles.RelativePath = Resources\Styles\LabelStyles.xaml
+
+[C:/Users/stage-karucaj/source/repos/CleanSpace/CleanSpace/Resources/Styles/Styles.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = CleanSpace.Resources.Styles.Styles.xaml
+build_metadata.AdditionalFiles.TargetPath = Resources\Styles\Styles.xaml
+build_metadata.AdditionalFiles.RelativePath = Resources\Styles\Styles.xaml
+
+[C:/Users/stage-karucaj/source/repos/CleanSpace/CleanSpace/Views/Auth/LoginPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = CleanSpace.Views.Auth.LoginPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\Auth\LoginPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\Auth\LoginPage.xaml
+
+[C:/Users/stage-karucaj/source/repos/CleanSpace/CleanSpace/Views/Home/HomeOperatore.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = CleanSpace.Views.Home.HomeOperatore.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\Home\HomeOperatore.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\Home\HomeOperatore.xaml
+
+[C:/Users/stage-karucaj/source/repos/CleanSpace/CleanSpace/Views/Home/HomeUtente.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = CleanSpace.Views.Home.HomeUtente.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\Home\HomeUtente.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\Home\HomeUtente.xaml
+
+[C:/Users/stage-karucaj/source/repos/CleanSpace/CleanSpace/Views/Segnala/CategoriePage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = CleanSpace.Views.Segnala.CategoriePage.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\Segnala\CategoriePage.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\Segnala\CategoriePage.xaml
+
+[C:/Users/stage-karucaj/source/repos/CleanSpace/CleanSpace/Views/Segnala/InviaSegnalazione.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = CleanSpace.Views.Segnala.InviaSegnalazione.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\Segnala\InviaSegnalazione.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\Segnala\InviaSegnalazione.xaml
