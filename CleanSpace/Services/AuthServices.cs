@@ -27,7 +27,6 @@ public class AuthServices
             Password = password
         };
 
-        //Console.WriteLine("Sto chiamando API...");
 
         var response =
             await _httpClient.PostAsJsonAsync(

@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<ContentPage
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:layouts="clr-namespace:CleanSpace.Views.Layouts"
+    x:Class="CleanSpace.Views.Profilo.StoricoSegnalazioni"
+    BackgroundColor="#F8FFF1"
+    NavigationPage.HasNavigationBar="False">
+
+    <layouts:PageLayout
+        Titolo="Storico">
+
+        <CollectionView
+            Margin="24,20"
+            ItemsSource="{Binding Segnalazioni}">
+
+            <CollectionView.ItemTemplate>
+
+                <DataTemplate>
+
+                    <Border
+                        Stroke="#EFEFEF"
+                        StrokeThickness="1"
+                        BackgroundColor="White"
+                        Padding="18"
+                        Margin="0,0,0,14"
+                        StrokeShape="RoundRectangle 24">
+
+                        <VerticalStackLayout
+                            Spacing="8">
+
+                            <Label
+                                Text="{Binding Categoria}"
+                                FontSize="18"
+                                FontAttributes="Bold"
+                                TextColor="#111827"/>
+
+                            <Label
+                                Text="{Binding Nota}"
+                                FontSize="14"
+                                TextColor="#6B7280"/>
+
+                            <HorizontalStackLayout
+                                Spacing="10">
+
+                                <Label
+                                    Text="Stato:"
+                                    FontAttributes="Bold"
+                                    TextColor="#365314"/>
+
+                                <Label
+                                    Text="{Binding Stato}"
+                                    TextColor="#6B7280"/>
+
+                            </HorizontalStackLayout>
+
+                            <HorizontalStackLayout
+                                Spacing="10">
+
+                                <Label
+                                    Text="Priorità:"
+                                    FontAttributes="Bold"
+                                    TextColor="#365314"/>
+
+                                <Label
+                                    Text="{Binding Priorita}"
+                                    TextColor="#84CC16"/>
+
+                            </HorizontalStackLayout>
+
+                        </VerticalStackLayout>
+
+                    </Border>
+
+                </DataTemplate>
+
+            </CollectionView.ItemTemplate>
+
+        </CollectionView>
+
+    </layouts:PageLayout>
+
+</ContentPage>

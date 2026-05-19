@@ -32,12 +32,12 @@ C:\Users\stage-karucaj\source\repos\CleanSpace\CleanSpace\obj\Debug\net9.0-andro
 C:\Users\stage-karucaj\source\repos\CleanSpace\CleanSpace\obj\Debug\net9.0-android\resizetizer\f\OpenSans-Regular.ttf
 C:\Users\stage-karucaj\source\repos\CleanSpace\CleanSpace\obj\Debug\net9.0-android\resizetizer\f\OpenSans-Semibold.ttf
 C:\Users\stage-karucaj\source\repos\CleanSpace\CleanSpace\obj\Debug\net9.0-android\resizetizer\r\drawable\logo2.png
-C:\Users\stage-karucaj\source\repos\CleanSpace\CleanSpace\obj\Debug\net9.0-android\resizetizer\r\drawable\logo.png
 C:\Users\stage-karucaj\source\repos\CleanSpace\CleanSpace\obj\Debug\net9.0-android\resizetizer\r\drawable-xxxhdpi\dotnet_bot.png
 C:\Users\stage-karucaj\source\repos\CleanSpace\CleanSpace\obj\Debug\net9.0-android\resizetizer\r\drawable-xxhdpi\dotnet_bot.png
 C:\Users\stage-karucaj\source\repos\CleanSpace\CleanSpace\obj\Debug\net9.0-android\resizetizer\r\drawable-xhdpi\dotnet_bot.png
 C:\Users\stage-karucaj\source\repos\CleanSpace\CleanSpace\obj\Debug\net9.0-android\resizetizer\r\drawable-hdpi\dotnet_bot.png
 C:\Users\stage-karucaj\source\repos\CleanSpace\CleanSpace\obj\Debug\net9.0-android\resizetizer\r\drawable-mdpi\dotnet_bot.png
+C:\Users\stage-karucaj\source\repos\CleanSpace\CleanSpace\obj\Debug\net9.0-android\resizetizer\r\drawable\logo.png
 C:\Users\stage-karucaj\source\repos\CleanSpace\CleanSpace\obj\Debug\net9.0-android\resizetizer\r\mipmap-xxxhdpi\appicon_round.png
 C:\Users\stage-karucaj\source\repos\CleanSpace\CleanSpace\obj\Debug\net9.0-android\resizetizer\r\mipmap-xxhdpi\appicon_round.png
 C:\Users\stage-karucaj\source\repos\CleanSpace\CleanSpace\obj\Debug\net9.0-android\resizetizer\r\mipmap-xhdpi\appicon_round.png
@@ -134,6 +134,7 @@ C:\Users\stage-karucaj\source\repos\CleanSpace\CleanSpace\obj\Debug\net9.0-andro
 C:\Users\stage-karucaj\source\repos\CleanSpace\CleanSpace\obj\Debug\net9.0-android\CleanSpace.AssemblyInfoInputs.cache
 C:\Users\stage-karucaj\source\repos\CleanSpace\CleanSpace\obj\Debug\net9.0-android\CleanSpace.AssemblyInfo.cs
 C:\Users\stage-karucaj\source\repos\CleanSpace\CleanSpace\obj\Debug\net9.0-android\CleanSpace.csproj.CoreCompileInputs.cache
+C:\Users\stage-karucaj\source\repos\CleanSpace\CleanSpace\obj\Debug\net9.0-android\CleanSpace.sourcelink.json
 C:\Users\stage-karucaj\source\repos\CleanSpace\CleanSpace\obj\Debug\net9.0-android\XamlC.stamp
 C:\Users\stage-karucaj\source\repos\CleanSpace\CleanSpace\obj\Debug\net9.0-android\CleanSpace.csproj.Up2Date
 C:\Users\stage-karucaj\source\repos\CleanSpace\CleanSpace\obj\Debug\net9.0-android\CleanSpace.dll

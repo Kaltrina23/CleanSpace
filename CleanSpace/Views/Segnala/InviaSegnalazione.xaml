@@ -94,16 +94,7 @@
                         Spacing="18">
 
 
-                        <Button
-                            Text="Scatta Foto"
-                            Command="{Binding ScattaFotoCommand}"
-                            HeightRequest="40"
-                            CornerRadius="18"
-                            BackgroundColor="#A3D214"
-                            TextColor="White"
-                            FontAttributes="Bold"/>
-
-                        <Frame
+                        <!--<Frame
                             Padding="0"
                             CornerRadius="18"
                             IsClippedToBounds="True"
@@ -114,7 +105,24 @@
                                 Source="{Binding FotoPreview}"
                                 HeightRequest="80"
                                 Aspect="AspectFill"/>
-                        </Frame>
+                        </Frame>-->
+
+                        <Label
+                            Text=" Foto"
+                            FontAttributes="Bold"
+                            FontSize="16"
+                            TextColor="#365314"/>
+
+
+                        <Button
+                            Text="Scatta Foto"
+                            Command="{Binding ScattaFotoCommand}"
+                            Clicked="Foto"
+                            HeightRequest="40"
+                            CornerRadius="18"
+                            BackgroundColor="DarkGray"
+                            TextColor="White"
+                            FontAttributes="Bold"/>
 
                     </VerticalStackLayout>
 

@@ -8,9 +8,6 @@
     BackgroundColor="#F8FFF1"
     NavigationPage.HasNavigationBar="False">
 
-    <ContentPage.BindingContext>
-        <viewmodels:HomeOperatoreViewModel/>
-    </ContentPage.BindingContext>
 
     <Grid RowDefinitions="70,*">
 

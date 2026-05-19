@@ -107,20 +107,32 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <Compile Update="Resources\Styles\ButtonStyles.xaml.cs">
-	    <DependentUpon>ButtonStyles.xaml</DependentUpon>
-	  </Compile>
 	  <Compile Update="Resources\Styles\LabelStyles.xaml.cs">
 	    <DependentUpon>LabelStyles.xaml</DependentUpon>
 	  </Compile>
 	  <Compile Update="Views\Auth\LoginPage.xaml.cs">
 	    <DependentUpon>LoginPage.xaml</DependentUpon>
 	  </Compile>
+	  <Compile Update="Views\Components\SegnalazioneCard.xaml.cs">
+	    <DependentUpon>SegnalazioneCard.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="Views\Components\UtenteHeader.xaml.cs">
+	    <DependentUpon>UtenteHeader.xaml</DependentUpon>
+	  </Compile>
 	  <Compile Update="Views\Home\HomeOperatore.xaml.cs">
 	    <DependentUpon>HomeOperatore.xaml</DependentUpon>
 	  </Compile>
+	  <Compile Update="Views\Layouts\PageLayout.xaml.cs">
+	    <DependentUpon>PageLayout.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="Views\Profilo\ProfiloUtente.xaml.cs">
+	    <DependentUpon>ProfiloUtente.xaml</DependentUpon>
+	  </Compile>
 	  <Compile Update="Views\Segnala\CategoriePage.xaml.cs">
 	    <DependentUpon>CategoriePage.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="Views\Segnala\StoricoSegnalazioni.xaml.cs">
+	    <DependentUpon>StoricoSegnalazioni.xaml</DependentUpon>
 	  </Compile>
 	</ItemGroup>
 
@@ -129,10 +141,31 @@
 	  <MauiXaml Update="Views\Auth\LoginPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
+	  <MauiXaml Update="Views\Auth\RegistratiPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\Components\CategoriaCard.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\Components\InfoCard.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\Components\SegnalazioneCard.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\Components\UtenteHeader.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="Views\Home\HomeUtente.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Views\Home\HomeOperatore.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\Layouts\MainLayout.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\Layouts\PageLayout.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Views\Operatore\Categoria.xaml">
@@ -141,19 +174,16 @@
 	  <MauiXaml Update="Views\Operatore\InviaSegnalazione.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="Resources\Styles\BorderStyles.xaml">
-	    <Generator>MSBuild:Compile</Generator>
-	  </MauiXaml>
-	  <MauiXaml Update="Resources\Styles\ButtonStyles.xaml">
-	    <Generator>MSBuild:Compile</Generator>
-	  </MauiXaml>
 	  <MauiXaml Update="Resources\Styles\LabelStyles.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="Resources\Styles\EntryStyles.xaml">
+	  <MauiXaml Update="Views\Profilo\ProfiloUtente.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Views\Segnala\CategoriePage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\Segnala\StoricoSegnalazioni.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	</ItemGroup>

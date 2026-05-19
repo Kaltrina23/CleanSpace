@@ -35,35 +35,23 @@ build_metadata.AdditionalFiles.ManifestResourceName = CleanSpace.AppShell.xaml
 build_metadata.AdditionalFiles.TargetPath = AppShell.xaml
 build_metadata.AdditionalFiles.RelativePath = AppShell.xaml
 
+[C:/Users/stage-karucaj/source/repos/CleanSpace/CleanSpace/Layouts/MainLayout.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = CleanSpace.Layouts.MainLayout.xaml
+build_metadata.AdditionalFiles.TargetPath = Layouts\MainLayout.xaml
+build_metadata.AdditionalFiles.RelativePath = Layouts\MainLayout.xaml
+
 [C:/Users/stage-karucaj/source/repos/CleanSpace/CleanSpace/MainPage.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = CleanSpace.MainPage.xaml
 build_metadata.AdditionalFiles.TargetPath = MainPage.xaml
 build_metadata.AdditionalFiles.RelativePath = MainPage.xaml
 
-[C:/Users/stage-karucaj/source/repos/CleanSpace/CleanSpace/Resources/Styles/BorderStyles.xaml]
-build_metadata.AdditionalFiles.GenKind = Xaml
-build_metadata.AdditionalFiles.ManifestResourceName = CleanSpace.Resources.Styles.BorderStyles.xaml
-build_metadata.AdditionalFiles.TargetPath = Resources\Styles\BorderStyles.xaml
-build_metadata.AdditionalFiles.RelativePath = Resources\Styles\BorderStyles.xaml
-
-[C:/Users/stage-karucaj/source/repos/CleanSpace/CleanSpace/Resources/Styles/ButtonStyles.xaml]
-build_metadata.AdditionalFiles.GenKind = Xaml
-build_metadata.AdditionalFiles.ManifestResourceName = CleanSpace.Resources.Styles.ButtonStyles.xaml
-build_metadata.AdditionalFiles.TargetPath = Resources\Styles\ButtonStyles.xaml
-build_metadata.AdditionalFiles.RelativePath = Resources\Styles\ButtonStyles.xaml
-
 [C:/Users/stage-karucaj/source/repos/CleanSpace/CleanSpace/Resources/Styles/Colors.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = CleanSpace.Resources.Styles.Colors.xaml
 build_metadata.AdditionalFiles.TargetPath = Resources\Styles\Colors.xaml
 build_metadata.AdditionalFiles.RelativePath = Resources\Styles\Colors.xaml
-
-[C:/Users/stage-karucaj/source/repos/CleanSpace/CleanSpace/Resources/Styles/EntryStyles.xaml]
-build_metadata.AdditionalFiles.GenKind = Xaml
-build_metadata.AdditionalFiles.ManifestResourceName = CleanSpace.Resources.Styles.EntryStyles.xaml
-build_metadata.AdditionalFiles.TargetPath = Resources\Styles\EntryStyles.xaml
-build_metadata.AdditionalFiles.RelativePath = Resources\Styles\EntryStyles.xaml
 
 [C:/Users/stage-karucaj/source/repos/CleanSpace/CleanSpace/Resources/Styles/LabelStyles.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
@@ -83,6 +71,36 @@ build_metadata.AdditionalFiles.ManifestResourceName = CleanSpace.Views.Auth.Logi
 build_metadata.AdditionalFiles.TargetPath = Views\Auth\LoginPage.xaml
 build_metadata.AdditionalFiles.RelativePath = Views\Auth\LoginPage.xaml
 
+[C:/Users/stage-karucaj/source/repos/CleanSpace/CleanSpace/Views/Auth/RegistratiPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = CleanSpace.Views.Auth.RegistratiPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\Auth\RegistratiPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\Auth\RegistratiPage.xaml
+
+[C:/Users/stage-karucaj/source/repos/CleanSpace/CleanSpace/Views/Components/CategoriaCard.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = CleanSpace.Views.Components.CategoriaCard.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\Components\CategoriaCard.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\Components\CategoriaCard.xaml
+
+[C:/Users/stage-karucaj/source/repos/CleanSpace/CleanSpace/Views/Components/InfoCard.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = CleanSpace.Views.Components.InfoCard.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\Components\InfoCard.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\Components\InfoCard.xaml
+
+[C:/Users/stage-karucaj/source/repos/CleanSpace/CleanSpace/Views/Components/SegnalazioneCard.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = CleanSpace.Views.Components.SegnalazioneCard.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\Components\SegnalazioneCard.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\Components\SegnalazioneCard.xaml
+
+[C:/Users/stage-karucaj/source/repos/CleanSpace/CleanSpace/Views/Components/UtenteHeader.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = CleanSpace.Views.Components.UtenteHeader.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\Components\UtenteHeader.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\Components\UtenteHeader.xaml
+
 [C:/Users/stage-karucaj/source/repos/CleanSpace/CleanSpace/Views/Home/HomeOperatore.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = CleanSpace.Views.Home.HomeOperatore.xaml
@@ -95,6 +113,18 @@ build_metadata.AdditionalFiles.ManifestResourceName = CleanSpace.Views.Home.Home
 build_metadata.AdditionalFiles.TargetPath = Views\Home\HomeUtente.xaml
 build_metadata.AdditionalFiles.RelativePath = Views\Home\HomeUtente.xaml
 
+[C:/Users/stage-karucaj/source/repos/CleanSpace/CleanSpace/Views/Layouts/PageLayout.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = CleanSpace.Views.Layouts.PageLayout.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\Layouts\PageLayout.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\Layouts\PageLayout.xaml
+
+[C:/Users/stage-karucaj/source/repos/CleanSpace/CleanSpace/Views/Profilo/ProfiloUtente.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = CleanSpace.Views.Profilo.ProfiloUtente.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\Profilo\ProfiloUtente.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\Profilo\ProfiloUtente.xaml
+
 [C:/Users/stage-karucaj/source/repos/CleanSpace/CleanSpace/Views/Segnala/CategoriePage.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = CleanSpace.Views.Segnala.CategoriePage.xaml
@@ -106,3 +136,9 @@ build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = CleanSpace.Views.Segnala.InviaSegnalazione.xaml
 build_metadata.AdditionalFiles.TargetPath = Views\Segnala\InviaSegnalazione.xaml
 build_metadata.AdditionalFiles.RelativePath = Views\Segnala\InviaSegnalazione.xaml
+
+[C:/Users/stage-karucaj/source/repos/CleanSpace/CleanSpace/Views/Segnala/StoricoSegnalazioni.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = CleanSpace.Views.Segnala.StoricoSegnalazioni.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\Segnala\StoricoSegnalazioni.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\Segnala\StoricoSegnalazioni.xaml

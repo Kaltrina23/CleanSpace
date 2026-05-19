@@ -9,6 +9,7 @@ C:\Users\stage-karucaj\source\repos\CleanSpace\CleanSpace\bin\Debug\net9.0-windo
 C:\Users\stage-karucaj\source\repos\CleanSpace\CleanSpace\bin\Debug\net9.0-windows10.0.19041.0\win10-x64\OpenSans-Regular.ttf
 C:\Users\stage-karucaj\source\repos\CleanSpace\CleanSpace\bin\Debug\net9.0-windows10.0.19041.0\win10-x64\OpenSans-Semibold.ttf
 C:\Users\stage-karucaj\source\repos\CleanSpace\CleanSpace\bin\Debug\net9.0-windows10.0.19041.0\win10-x64\logo.scale-100.png
+C:\Users\stage-karucaj\source\repos\CleanSpace\CleanSpace\bin\Debug\net9.0-windows10.0.19041.0\win10-x64\logo2.scale-100.png
 C:\Users\stage-karucaj\source\repos\CleanSpace\CleanSpace\bin\Debug\net9.0-windows10.0.19041.0\win10-x64\appiconLargeTile.scale-400.png
 C:\Users\stage-karucaj\source\repos\CleanSpace\CleanSpace\bin\Debug\net9.0-windows10.0.19041.0\win10-x64\appiconLargeTile.scale-200.png
 C:\Users\stage-karucaj\source\repos\CleanSpace\CleanSpace\bin\Debug\net9.0-windows10.0.19041.0\win10-x64\appiconLargeTile.scale-150.png
@@ -60,7 +61,6 @@ C:\Users\stage-karucaj\source\repos\CleanSpace\CleanSpace\bin\Debug\net9.0-windo
 C:\Users\stage-karucaj\source\repos\CleanSpace\CleanSpace\bin\Debug\net9.0-windows10.0.19041.0\win10-x64\dotnet_bot.scale-150.png
 C:\Users\stage-karucaj\source\repos\CleanSpace\CleanSpace\bin\Debug\net9.0-windows10.0.19041.0\win10-x64\dotnet_bot.scale-125.png
 C:\Users\stage-karucaj\source\repos\CleanSpace\CleanSpace\bin\Debug\net9.0-windows10.0.19041.0\win10-x64\dotnet_bot.scale-100.png
-C:\Users\stage-karucaj\source\repos\CleanSpace\CleanSpace\bin\Debug\net9.0-windows10.0.19041.0\win10-x64\logo2.scale-100.png
 C:\Users\stage-karucaj\source\repos\CleanSpace\CleanSpace\bin\Debug\net9.0-windows10.0.19041.0\win10-x64\CoreMessagingXP.dll
 C:\Users\stage-karucaj\source\repos\CleanSpace\CleanSpace\bin\Debug\net9.0-windows10.0.19041.0\win10-x64\dcompi.dll
 C:\Users\stage-karucaj\source\repos\CleanSpace\CleanSpace\bin\Debug\net9.0-windows10.0.19041.0\win10-x64\dwmcorei.dll
@@ -464,6 +464,7 @@ C:\Users\stage-karucaj\source\repos\CleanSpace\CleanSpace\obj\Debug\net9.0-windo
 C:\Users\stage-karucaj\source\repos\CleanSpace\CleanSpace\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\resizetizer\f\OpenSans-Regular.ttf
 C:\Users\stage-karucaj\source\repos\CleanSpace\CleanSpace\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\resizetizer\f\OpenSans-Semibold.ttf
 C:\Users\stage-karucaj\source\repos\CleanSpace\CleanSpace\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\resizetizer\r\logo.scale-100.png
+C:\Users\stage-karucaj\source\repos\CleanSpace\CleanSpace\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\resizetizer\r\logo2.scale-100.png
 C:\Users\stage-karucaj\source\repos\CleanSpace\CleanSpace\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLargeTile.scale-400.png
 C:\Users\stage-karucaj\source\repos\CleanSpace\CleanSpace\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLargeTile.scale-200.png
 C:\Users\stage-karucaj\source\repos\CleanSpace\CleanSpace\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLargeTile.scale-150.png
@@ -515,12 +516,12 @@ C:\Users\stage-karucaj\source\repos\CleanSpace\CleanSpace\obj\Debug\net9.0-windo
 C:\Users\stage-karucaj\source\repos\CleanSpace\CleanSpace\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\resizetizer\r\dotnet_bot.scale-150.png
 C:\Users\stage-karucaj\source\repos\CleanSpace\CleanSpace\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\resizetizer\r\dotnet_bot.scale-125.png
 C:\Users\stage-karucaj\source\repos\CleanSpace\CleanSpace\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\resizetizer\r\dotnet_bot.scale-100.png
-C:\Users\stage-karucaj\source\repos\CleanSpace\CleanSpace\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\resizetizer\r\logo2.scale-100.png
 C:\Users\stage-karucaj\source\repos\CleanSpace\CleanSpace\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\mauiimage.stamp
 C:\Users\stage-karucaj\source\repos\CleanSpace\CleanSpace\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\mauiimage.outputs
 C:\Users\stage-karucaj\source\repos\CleanSpace\CleanSpace\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\CleanSpace.AssemblyInfoInputs.cache
 C:\Users\stage-karucaj\source\repos\CleanSpace\CleanSpace\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\CleanSpace.AssemblyInfo.cs
 C:\Users\stage-karucaj\source\repos\CleanSpace\CleanSpace\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\CleanSpace.csproj.CoreCompileInputs.cache
+C:\Users\stage-karucaj\source\repos\CleanSpace\CleanSpace\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\CleanSpace.sourcelink.json
 C:\Users\stage-karucaj\source\repos\CleanSpace\CleanSpace\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\XamlC.stamp
 C:\Users\stage-karucaj\source\repos\CleanSpace\CleanSpace\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\CleanSpace.csproj.Up2Date
 C:\Users\stage-karucaj\source\repos\CleanSpace\CleanSpace\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\CleanSpace.dll

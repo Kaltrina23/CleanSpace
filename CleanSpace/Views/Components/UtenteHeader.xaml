@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<ContentView
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+
+    x:Class="CleanSpace.Views.Components.UtenteHeader">
+
+    <Grid Padding="0">
+
+        <HorizontalStackLayout Spacing="6">
+
+            <Image Source="logo2.png"
+                   HeightRequest="75"
+                   WidthRequest="75"
+                   Aspect="AspectFit"/>
+
+            <VerticalStackLayout
+                VerticalOptions="Center"
+                Spacing="0">
+
+                <Label Text="{Binding NomeUtente}"
+                       FontSize="28"
+                       FontAttributes="Bold"
+                       TextColor="#1F2937"/>
+
+            </VerticalStackLayout>
+
+        </HorizontalStackLayout>
+
+    </Grid>
+
+</ContentView>

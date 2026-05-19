@@ -1,22 +1,22 @@
 ﻿using CleanSpace.DTOs;
 using CleanSpace.Services;
+
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 
 namespace CleanSpace.ViewModels;
 
-[QueryProperty(nameof(CategoriaId), "categoriaId")]
-[QueryProperty(nameof(CategoriaNome), "categoriaNome")]
 public partial class InviaSegnalazioneViewModel : ObservableObject
 {
-    private readonly ApiService _apiService;
+    private readonly SegnalazioniService _segnalazioniService;
 
     private readonly TokenService _tokenService;
 
-    private int _categoriaId;
+    [ObservableProperty]
+    private int categoriaId;
 
     [ObservableProperty]
-    private string nomeCategoria;
+    private string categoriaNome;
 
     [ObservableProperty]
     private string posizione;
@@ -48,42 +48,50 @@ public partial class InviaSegnalazioneViewModel : ObservableObject
 
     private string? _fotoBase64;
 
-    // PROPERTY SHELL
-    public string CategoriaId
+    public string CategoriaIdQuery
     {
         set
         {
-            _categoriaId = int.Parse(value);
+            CategoriaId = int.Parse(value);
         }
     }
 
-    public string CategoriaNome
+    public string CategoriaNomeQuery
     {
         set
         {
-            NomeCategoria =
+            categoriaNome =
                 Uri.UnescapeDataString(value);
         }
     }
 
-    public InviaSegnalazioneViewModel()
+    public InviaSegnalazioneViewModel
+    (
+        SegnalazioniService segnalazioniService,
+        TokenService tokenService
+    )
     {
-        _apiService = new ApiService();
+        _segnalazioniService =
+            segnalazioniService;
 
-        _tokenService = new TokenService();
+        _tokenService =
+            tokenService;
 
-        GetLocation();
+        Task.Run(async () =>
+        {
+            await GetLocation();
 
-        CaricaGuest();
+            await CaricaGuest();
+        });
     }
 
-    private async void CaricaGuest()
+    private async Task CaricaGuest()
     {
         IsGuest =
             await _tokenService.IsGuest();
     }
 
-    private async void GetLocation()
+    private async Task GetLocation()
     {
         try
         {
@@ -92,9 +100,11 @@ public partial class InviaSegnalazioneViewModel : ObservableObject
 
             if (location != null)
             {
-                _latitudine = location.Latitude;
+                _latitudine =
+                    location.Latitude;
 
-                _longitudine = location.Longitude;
+                _longitudine =
+                    location.Longitude;
 
                 Posizione =
                     $"{_latitudine:F5}, {_longitudine:F5}";
@@ -102,7 +112,8 @@ public partial class InviaSegnalazioneViewModel : ObservableObject
         }
         catch
         {
-            Posizione = "Posizione non disponibile";
+            Posizione =
+                "Posizione non disponibile";
         }
     }
 
@@ -125,12 +136,14 @@ public partial class InviaSegnalazioneViewModel : ObservableObject
 
             await stream.CopyToAsync(memory);
 
-            var bytes = memory.ToArray();
+            var bytes =
+                memory.ToArray();
 
             _fotoBase64 =
                 Convert.ToBase64String(bytes);
 
-            FotoPreview = foto.FullPath;
+            FotoPreview =
+                foto.FullPath;
         }
         catch
         {
@@ -148,12 +161,15 @@ public partial class InviaSegnalazioneViewModel : ObservableObject
         {
             IsBusy = true;
 
-            // VALIDAZIONE GUEST
             if (IsGuest)
             {
-                if (string.IsNullOrWhiteSpace(OspiteNome) ||
-                    string.IsNullOrWhiteSpace(OspiteCognome) ||
-                    string.IsNullOrWhiteSpace(OspiteEmail))
+                if (
+                    string.IsNullOrWhiteSpace(OspiteNome)
+                    ||
+                    string.IsNullOrWhiteSpace(OspiteCognome)
+                    ||
+                    string.IsNullOrWhiteSpace(OspiteEmail)
+                )
                 {
                     await Shell.Current.DisplayAlert(
                         "Errore",
@@ -164,9 +180,11 @@ public partial class InviaSegnalazioneViewModel : ObservableObject
                 }
             }
 
-            // VALIDAZIONE POSIZIONE
-            if (double.IsNaN(_latitudine) ||
-                double.IsNaN(_longitudine))
+            if (
+                double.IsNaN(_latitudine)
+                ||
+                double.IsNaN(_longitudine)
+            )
             {
                 await Shell.Current.DisplayAlert(
                     "Errore",
@@ -179,7 +197,8 @@ public partial class InviaSegnalazioneViewModel : ObservableObject
             var dto =
                 new InviaSegnalazioneDto
                 {
-                    CategoriaId = _categoriaId,
+                    CategoriaId =
+                        CategoriaId,
 
                     Latitudine =
                         Convert.ToDecimal(_latitudine),
@@ -187,18 +206,24 @@ public partial class InviaSegnalazioneViewModel : ObservableObject
                     Longitudine =
                         Convert.ToDecimal(_longitudine),
 
-                    Nota = Nota,
+                    Nota =
+                        Nota,
 
-                    FotoBase64 = _fotoBase64,
+                    FotoBase64 =
+                        _fotoBase64,
 
-                    OspiteNome = OspiteNome,
+                    OspiteNome =
+                        OspiteNome,
 
-                    OspiteCognome = OspiteCognome,
+                    OspiteCognome =
+                        OspiteCognome,
 
-                    OspiteEmail = OspiteEmail
+                    OspiteEmail =
+                        OspiteEmail
                 };
 
-            await _apiService.InviaSegnalazione(dto);
+            await _segnalazioniService
+                .InviaSegnalazione(dto);
 
             await Shell.Current.DisplayAlert(
                 "Successo",

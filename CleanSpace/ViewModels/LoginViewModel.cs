@@ -90,11 +90,11 @@ public partial class LoginViewModel : ObservableObject
 
             if (ruolo.Contains("operatore"))
             {
-                await Shell.Current.GoToAsync(nameof(HomeOperatore));
+                await Shell.Current.GoToAsync("//operatoreTabs");
             }
             else
             {
-                await Shell.Current.GoToAsync(nameof(HomeUtente));
+                await Shell.Current.GoToAsync("//utenteTabs");
             }
         }
         catch (Exception ex)

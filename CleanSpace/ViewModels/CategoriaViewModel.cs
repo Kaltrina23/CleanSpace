@@ -1,63 +1,70 @@
 ﻿using CleanSpace.Models;
 using CleanSpace.Services;
-using CleanSpace.Views.Segnala;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using System.Collections.ObjectModel;
+using CleanSpace.Views.Segnala;
 
-namespace CleanSpace.ViewModels
+namespace CleanSpace.ViewModels;
+
+public partial class CategoriaViewModel : ObservableObject
 {
-    public partial class CategoriaViewModel : ObservableObject
+    private readonly CategorieService _apiService;
+
+    public ObservableCollection<Categoria>
+        Categorie
+    { get; set; } = new();
+
+    public CategoriaViewModel(CategorieService apiService)
     {
-        private readonly ApiService _apiService;
+        _apiService = apiService;
 
-        public ObservableCollection<Categoria> Categorie { get; set; } = new();
+        Task.Run(async () =>
+            await LoadCategorie());
+    }
 
-        public CategoriaViewModel()
+    private async Task LoadCategorie()
+    {
+        try
         {
-            _apiService = new ApiService();
+            var lista =
+                await _apiService.GetCategorie();
 
-            Task.Run(async () =>
-                await LoadCategorie());
-        }
-
-        private async Task LoadCategorie()
-        {
-            try
+            MainThread.BeginInvokeOnMainThread(() =>
             {
-                var lista =
-                    await _apiService.GetCategorie();
+                Categorie.Clear();
 
-                MainThread.BeginInvokeOnMainThread(() =>
+                foreach (var categoria in lista)
                 {
-                    Categorie.Clear();
-
-                    foreach (var categoria in lista)
-                    {
-                        Categorie.Add(categoria);
-                    }
-                });
-            }
-            catch (Exception ex)
-            {
-                await Shell.Current.DisplayAlert(
-                    "Errore",
-                    ex.Message,
-                    "OK");
-            }
+                    Categorie.Add(categoria);
+                }
+            });
         }
-
-        [RelayCommand]
-        private async Task SelezionaCategoria(
-            Categoria categoria)
+        catch (Exception ex)
         {
-            if (categoria == null)
-                return;
-
-            await Shell.Current.GoToAsync(
-                $"{nameof(InviaSegnalazione)}" +
-                $"?categoriaId={categoria.Id}" +
-                $"&categoriaNome={categoria.Nome}");
+            await Shell.Current.DisplayAlert(
+                "Errore",
+                ex.Message,
+                "OK");
         }
+    }
+
+    [RelayCommand]
+    private async Task SelezionaCategoria(
+        Categoria categoria)
+    {
+        if (categoria == null)
+            return;
+
+        await Shell.Current.GoToAsync(
+            $"{nameof(InviaSegnalazione)}" +
+            $"?categoriaId={categoria.Id}" +
+            $"&categoriaNome={categoria.Nome}");
+    }
+
+    [RelayCommand]
+    private async Task TornaHome()
+    {
+        await Shell.Current.GoToAsync("..");
     }
 }

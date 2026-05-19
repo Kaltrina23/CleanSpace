@@ -6,12 +6,19 @@
     <members>
         <member name="T:CleanSpace.ViewModels.CategoriaViewModel">
             <inheritdoc/>
+            <inheritdoc/>
         </member>
         <member name="F:CleanSpace.ViewModels.CategoriaViewModel.selezionaCategoriaCommand">
             <summary>The backing field for <see cref="P:CleanSpace.ViewModels.CategoriaViewModel.SelezionaCategoriaCommand"/>.</summary>
         </member>
         <member name="P:CleanSpace.ViewModels.CategoriaViewModel.SelezionaCategoriaCommand">
             <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand`1"/> instance wrapping <see cref="M:CleanSpace.ViewModels.CategoriaViewModel.SelezionaCategoria(CleanSpace.Models.Categoria)"/>.</summary>
+        </member>
+        <member name="F:CleanSpace.ViewModels.CategoriaViewModel.tornaHomeCommand">
+            <summary>The backing field for <see cref="P:CleanSpace.ViewModels.CategoriaViewModel.TornaHomeCommand"/>.</summary>
+        </member>
+        <member name="P:CleanSpace.ViewModels.CategoriaViewModel.TornaHomeCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:CleanSpace.ViewModels.CategoriaViewModel.TornaHome"/>.</summary>
         </member>
         <member name="T:CleanSpace.ViewModels.HomeOperatoreViewModel">
             <inheritdoc/>
@@ -73,17 +80,27 @@
         </member>
         <member name="T:CleanSpace.ViewModels.HomeUtenteViewModel">
             <inheritdoc/>
+            <inheritdoc/>
         </member>
         <member name="P:CleanSpace.ViewModels.HomeUtenteViewModel.NomeUtente">
             <inheritdoc cref="F:CleanSpace.ViewModels.HomeUtenteViewModel.nomeUtente"/>
+        </member>
+        <member name="F:CleanSpace.ViewModels.HomeUtenteViewModel.segnalaCommand">
+            <summary>The backing field for <see cref="P:CleanSpace.ViewModels.HomeUtenteViewModel.SegnalaCommand"/>.</summary>
+        </member>
+        <member name="P:CleanSpace.ViewModels.HomeUtenteViewModel.SegnalaCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:CleanSpace.ViewModels.HomeUtenteViewModel.Segnala"/>.</summary>
         </member>
         <member name="T:CleanSpace.ViewModels.InviaSegnalazioneViewModel">
             <inheritdoc/>
             <inheritdoc/>
             <inheritdoc/>
         </member>
-        <member name="P:CleanSpace.ViewModels.InviaSegnalazioneViewModel.NomeCategoria">
-            <inheritdoc cref="F:CleanSpace.ViewModels.InviaSegnalazioneViewModel.nomeCategoria"/>
+        <member name="P:CleanSpace.ViewModels.InviaSegnalazioneViewModel.CategoriaId">
+            <inheritdoc cref="F:CleanSpace.ViewModels.InviaSegnalazioneViewModel.categoriaId"/>
+        </member>
+        <member name="P:CleanSpace.ViewModels.InviaSegnalazioneViewModel.CategoriaNome">
+            <inheritdoc cref="F:CleanSpace.ViewModels.InviaSegnalazioneViewModel.categoriaNome"/>
         </member>
         <member name="P:CleanSpace.ViewModels.InviaSegnalazioneViewModel.Posizione">
             <inheritdoc cref="F:CleanSpace.ViewModels.InviaSegnalazioneViewModel.posizione"/>
@@ -146,6 +163,47 @@
         </member>
         <member name="P:CleanSpace.ViewModels.LoginViewModel.GuestLoginCommand">
             <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:CleanSpace.ViewModels.LoginViewModel.GuestLogin"/>.</summary>
+        </member>
+        <member name="T:CleanSpace.ViewModels.ProfiloUtenteViewModel">
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+        </member>
+        <member name="P:CleanSpace.ViewModels.ProfiloUtenteViewModel.Nome">
+            <inheritdoc cref="F:CleanSpace.ViewModels.ProfiloUtenteViewModel.nome"/>
+        </member>
+        <member name="P:CleanSpace.ViewModels.ProfiloUtenteViewModel.Cognome">
+            <inheritdoc cref="F:CleanSpace.ViewModels.ProfiloUtenteViewModel.cognome"/>
+        </member>
+        <member name="P:CleanSpace.ViewModels.ProfiloUtenteViewModel.Email">
+            <inheritdoc cref="F:CleanSpace.ViewModels.ProfiloUtenteViewModel.email"/>
+        </member>
+        <member name="P:CleanSpace.ViewModels.ProfiloUtenteViewModel.IsBusy">
+            <inheritdoc cref="F:CleanSpace.ViewModels.ProfiloUtenteViewModel.isBusy"/>
+        </member>
+        <member name="M:CleanSpace.ViewModels.ProfiloUtenteViewModel.OnIsBusyChanged(System.Boolean)">
+            <summary>Executes the logic for when <see cref="P:CleanSpace.ViewModels.ProfiloUtenteViewModel.IsBusy"/> just changed.</summary>
+            <param name="value">The new property value that was set.</param>
+            <remarks>This method is invoked right after the value of <see cref="P:CleanSpace.ViewModels.ProfiloUtenteViewModel.IsBusy"/> is changed.</remarks>
+        </member>
+        <member name="F:CleanSpace.ViewModels.ProfiloUtenteViewModel.salvaCommand">
+            <summary>The backing field for <see cref="P:CleanSpace.ViewModels.ProfiloUtenteViewModel.SalvaCommand"/>.</summary>
+        </member>
+        <member name="P:CleanSpace.ViewModels.ProfiloUtenteViewModel.SalvaCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:CleanSpace.ViewModels.ProfiloUtenteViewModel.Salva"/>.</summary>
+        </member>
+        <member name="F:CleanSpace.ViewModels.ProfiloUtenteViewModel.apriStoricoCommand">
+            <summary>The backing field for <see cref="P:CleanSpace.ViewModels.ProfiloUtenteViewModel.ApriStoricoCommand"/>.</summary>
+        </member>
+        <member name="P:CleanSpace.ViewModels.ProfiloUtenteViewModel.ApriStoricoCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:CleanSpace.ViewModels.ProfiloUtenteViewModel.ApriStorico"/>.</summary>
+        </member>
+        <member name="F:CleanSpace.ViewModels.ProfiloUtenteViewModel.logoutCommand">
+            <summary>The backing field for <see cref="P:CleanSpace.ViewModels.ProfiloUtenteViewModel.LogoutCommand"/>.</summary>
+        </member>
+        <member name="P:CleanSpace.ViewModels.ProfiloUtenteViewModel.LogoutCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:CleanSpace.ViewModels.ProfiloUtenteViewModel.Logout"/>.</summary>
         </member>
         <member name="T:CleanSpace.Resource">
             <summary>
@@ -282,8 +340,11 @@
         <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.NomeUtente">
             <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "NomeUtente" generated properties.</summary>
         </member>
-        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.NomeCategoria">
-            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "NomeCategoria" generated properties.</summary>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.CategoriaId">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "CategoriaId" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.CategoriaNome">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "CategoriaNome" generated properties.</summary>
         </member>
         <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.Posizione">
             <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "Posizione" generated properties.</summary>
@@ -315,6 +376,12 @@
         <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.Password">
             <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "Password" generated properties.</summary>
         </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.Nome">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "Nome" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.Cognome">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "Cognome" generated properties.</summary>
+        </member>
         <member name="T:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs">
             <summary>
             A helper type providing cached, reusable <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instances
@@ -324,8 +391,11 @@
         <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.NomeUtente">
             <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "NomeUtente" generated properties.</summary>
         </member>
-        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.NomeCategoria">
-            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "NomeCategoria" generated properties.</summary>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.CategoriaId">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "CategoriaId" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.CategoriaNome">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "CategoriaNome" generated properties.</summary>
         </member>
         <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.Posizione">
             <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "Posizione" generated properties.</summary>
@@ -356,6 +426,12 @@
         </member>
         <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.Password">
             <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "Password" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.Nome">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "Nome" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.Cognome">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "Cognome" generated properties.</summary>
         </member>
     </members>
 </doc>

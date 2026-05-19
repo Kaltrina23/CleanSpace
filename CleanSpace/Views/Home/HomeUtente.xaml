@@ -1,249 +1,39 @@
 <?xml version="1.0" encoding="utf-8" ?>
 
-<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:viewmodels="clr-namespace:CleanSpace.ViewModels"
-             x:Class="CleanSpace.Views.Home.HomeUtente"
-             BackgroundColor="#F8FFF1"
-             NavigationPage.HasNavigationBar="False">
-    
-            <ContentPage.BindingContext>
-                <viewmodels:HomeUtenteViewModel/>
-            </ContentPage.BindingContext>
+<ContentPage
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:viewmodels="clr-namespace:CleanSpace.ViewModels"
+    xmlns:components="clr-namespace:CleanSpace.Views.Components"
+    x:Class="CleanSpace.Views.Home.HomeUtente"
 
-    <Grid RowDefinitions="*,50">
+    BackgroundColor="#F8FFF1"
+    NavigationPage.HasNavigationBar="False">
 
-        <!-- CONTENUTO -->
-        <ScrollView Grid.Row="0"
-                                VerticalScrollBarVisibility="Never">
+    <!-- CONTENUTO -->
+    <ScrollView VerticalScrollBarVisibility="Never">
 
-            <VerticalStackLayout Padding="25,0,25,10"
-                                             Spacing="22">
+        <VerticalStackLayout
+            Padding="25,20,25,90"
+            Spacing="22">
 
-                <!-- HEADER -->
-                <Grid Margin="-25,0,-25,0"
-                                   Padding="5,0,0,2"
-                                   BackgroundColor="#D9F99D">
+            <components:UtenteHeader/>
 
-                    <VerticalStackLayout Spacing="0">
+            <components:SegnalazioneCard/>
 
-                        <!-- LOGO -->
-                        <HorizontalStackLayout Spacing="6"
-                                            Padding="0">
+            <components:InfoCard/>
 
-                            <Image Source="logo2.png"
-                                                HeightRequest="75"
-                                                WidthRequest="75"
-                                                Aspect="AspectFit"/>
+            <Button
+                Text="Profilo"
+                Clicked="ApriProfilo"
+                HeightRequest="55"
+                CornerRadius="28"
+                BackgroundColor="#A3D214"
+                TextColor="White"
+                FontAttributes="Bold"/>
 
-                            <Label Text="Home"
-                                                FontSize="26"
-                                                FontAttributes="Bold"
-                                                VerticalOptions="Center"
-                                                TextColor="#1F2937"/>
+        </VerticalStackLayout>
 
-                        </HorizontalStackLayout>
-
-                    </VerticalStackLayout>
-
-                </Grid>
-
-                <!-- TESTO -->
-                <VerticalStackLayout Spacing="2">
-
-                    <Label Text="Benvenuto,"
-                                       FontSize="20"
-                                       FontAttributes="Bold"
-                                       TextColor="#4D7C0F"/>
-
-                    <Label Text="{Binding NomeUtnte}"
-                                       FontSize="28"
-                                       FontAttributes="Bold"
-                                       TextColor="#1F2937"/>
-
-                </VerticalStackLayout>
-
-                <!-- CARD PRINCIPALE -->
-                <Frame CornerRadius="35"
-                                   Padding="25"
-                                   BackgroundColor="#A3D214"
-                                   BorderColor="#B7E33A"
-                                   HasShadow="False">
-
-                    <Grid ColumnDefinitions="90,*,70">
-
-
-                        <!-- ICONA -->
-                        <Frame HeightRequest="85"
-                                           WidthRequest="85"
-                                           CornerRadius="42"
-                                           BackgroundColor="#D9F99D"
-                                           Padding="0"
-                                           HasShadow="False"
-                                           VerticalOptions="Center">
-
-                            <Label Text="📍"
-                                               FontSize="40"
-                                               HorizontalOptions="Center"
-                                               VerticalOptions="Center"/>
-                        </Frame>
-
-                        <!-- TESTI -->
-                        <VerticalStackLayout Grid.Column="1"
-                                                         Spacing="4"
-                                                         Margin="18,0"
-                                                         VerticalOptions="Center">
-
-                            <Label Text="SEGNALA ORA"
-                                               FontSize="20"
-                                               FontAttributes="Bold"
-                                               TextColor="White"/>
-
-                            <Label Text="Invia una nuova segnalazione"
-                                               FontSize="15"
-                                               TextColor="#F7FEE7"/>
-
-                        </VerticalStackLayout>
-
-                        <!-- BOTTONE -->
-                        <Frame Grid.Column="2"
-                                           HeightRequest="55"
-                                           WidthRequest="55"
-                                           CornerRadius="28"
-                                           BackgroundColor="White"
-                                           Padding="0"
-                                           VerticalOptions="Center"
-                                           HasShadow="False">
-
-                            <Button Text="➜"
-                                                Clicked="ClickSegnala"
-                                                FontSize="22"
-                                                BackgroundColor="Transparent"
-                                                TextColor="#84CC16"
-                                                HorizontalOptions="Center"
-                                                VerticalOptions="Center"/>
-
-                        </Frame>
-
-                    </Grid>
-
-                </Frame>
-
-                <!-- CARD INFO -->
-                <Frame CornerRadius="25"
-                                   Padding="22"
-                                   BackgroundColor="#F3F8EA"
-                                   BorderColor="#E5F0D5"
-                                   HasShadow="False"
-                                   HorizontalOptions="Fill">
-
-                    <HorizontalStackLayout Spacing="15">
-
-                        <!-- ICONA -->
-                        <Frame HeightRequest="55"
-                                           WidthRequest="55"
-                                           CornerRadius="28"
-                                           BackgroundColor="#D9F99D"
-                                           Padding="12"
-                                           HasShadow="False">
-
-                            <Label Text="🌱"
-                                               FontSize="22"
-                                               HorizontalOptions="Center"
-                                               VerticalOptions="Center"/>
-                        </Frame>
-
-                        <!-- TESTO -->
-                        <VerticalStackLayout VerticalOptions="Center"
-                                         Spacing="2">
-
-                            <Label Text="Ogni segnalazione conta"
-                                               FontSize="18"
-                                               FontAttributes="Bold"
-                                               TextColor="#365314"/>
-
-                            <Label Text="Grazie per il tuo contributo"
-                                               FontSize="14"
-                                               TextColor="#6B7280"/>
-
-
-
-                        </VerticalStackLayout>
-
-                    </HorizontalStackLayout>
-
-                </Frame>
-
-
-            </VerticalStackLayout>
-
-        </ScrollView>
-
-        <!-- NAVBAR -->
-        <Frame Grid.Row="1"
-                           Margin="20,0,20,5"
-                           CornerRadius="35"
-                           BackgroundColor="White"
-                           BorderColor="#EEF5E4"
-                           Padding="0"
-                           HasShadow="True">
-
-            <Grid ColumnDefinitions="*,*,*"
-                              Padding="20,5">
-
-                <!-- HOME -->
-                <VerticalStackLayout Spacing="2"
-                                                 HorizontalOptions="Center"
-                                                 VerticalOptions="Center">
-
-                    <Label Text="⌂"
-                                       FontSize="26"
-                                       HorizontalOptions="Center"
-                                       TextColor="#84CC16"/>
-
-                    <Label Text="Home"
-                                       FontSize="13"
-                                       FontAttributes="Bold"
-                                       TextColor="#84CC16"/>
-
-                </VerticalStackLayout>
-
-                <!-- STORICO -->
-                <VerticalStackLayout Grid.Column="1"
-                                                 Spacing="2"
-                                                 HorizontalOptions="Center"
-                                                 VerticalOptions="Center">
-
-                    <Label Text="☰"
-                                       FontSize="24"
-                                       HorizontalOptions="Center"
-                                       TextColor="#84CC16"/>
-
-                    <Label Text="Storico"
-                                       FontSize="13"
-                                       TextColor="#84CC16"/>
-                </VerticalStackLayout>
-
-                <!-- PROFILO -->
-                <VerticalStackLayout Grid.Column="2"
-                                                 Spacing="2"
-                                                 HorizontalOptions="Center"
-                                                 VerticalOptions="Center">
-
-                    <Label Text="◎"
-                                       FontSize="24"
-                                       HorizontalOptions="Center"
-                                       TextColor="#84CC16"/>
-
-                    <Label Text="Profilo"
-                                       FontSize="13"
-                                       TextColor="#84CC16"/>
-                </VerticalStackLayout>
-
-            </Grid>
-
-        </Frame>
-
-    </Grid>
+    </ScrollView>
 
 </ContentPage>

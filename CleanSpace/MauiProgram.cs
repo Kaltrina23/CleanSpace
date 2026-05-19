@@ -5,6 +5,8 @@ using CleanSpace.Models;
 using CleanSpace.Views.Home;
 using CleanSpace.Services;
 using Microsoft.Extensions.Logging;
+using CleanSpace.Views.Segnala;
+using CleanSpace.Views.Profilo;
 
 namespace CleanSpace
 {
@@ -25,28 +27,56 @@ namespace CleanSpace
                 });
 
             //Services
+            // HTTP CLIENT
             builder.Services.AddSingleton(sp =>
             {
                 var handler = new HttpClientHandler();
 
-                handler.ServerCertificateCustomValidationCallback =
-                    (message, cert, chain, errors) => true;
+                #if ANDROID
 
-                var httpClient = new HttpClient(handler);
+                    handler.ServerCertificateCustomValidationCallback =
+                        (message, cert, chain, errors) => true;
 
-                return httpClient;
+                #endif
+
+                var client = new HttpClient(handler);
+
+                client.BaseAddress =
+                    new Uri("https://10.0.2.2:7097/api/");
+
+                return client;
             });
 
             builder.Services.AddSingleton<AuthServices>();
             builder.Services.AddSingleton<TokenService>();
+            builder.Services.AddSingleton<CategorieService>();
+            builder.Services.AddSingleton<SegnalazioniService>();
+            builder.Services.AddSingleton<ProfiloService>();
+            builder.Services.AddSingleton<StoricoSegnalazioniService>();
 
 
             //Viewmodels
             builder.Services.AddTransient<LoginViewModel>();
+            builder.Services.AddTransient<HomeUtenteViewModel>();
+            builder.Services.AddTransient<HomeOperatoreViewModel>();
+            builder.Services.AddTransient<CategoriaViewModel>();
+            builder.Services.AddTransient<InviaSegnalazioneViewModel>();
+            builder.Services.AddTransient<ProfiloUtenteViewModel>();
+            builder.Services.AddTransient<StoricoSegnalazioniViewModel>();
+
 
             builder.Services.AddTransient<LoginPage>();
             builder.Services.AddTransient<HomeUtente>();
             builder.Services.AddTransient<HomeOperatore>();
+            builder.Services.AddTransient<CategoriePage>();
+            builder.Services.AddTransient<InviaSegnalazione>();
+            builder.Services.AddTransient<ProfiloUtente>();
+            builder.Services.AddTransient<StoricoSegnalazioni>();
+
+
+
+
+
 
 
 
