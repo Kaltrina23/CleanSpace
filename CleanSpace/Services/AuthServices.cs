@@ -14,11 +14,11 @@ public class AuthServices
         _httpClient = httpClient;
 
         _httpClient.BaseAddress =
-            new Uri("https://10.0.2.2:7097/api/");
-
+            new Uri("https://192.168.250.107:7097/api/");
+      
         _httpClient.DefaultRequestHeaders.Add("Accept", "application/json");
     }
-   
+
     public async Task<AuthResultModel?> Login(string email, string password)
     {
         var request = new AuthRequestDto
@@ -63,6 +63,7 @@ public class AuthServices
         }
 
         string ruolo = "Utente";
+        var idUtente = 0;
 
         try
         {
@@ -82,6 +83,14 @@ public class AuthServices
                         x.Type.Contains("role"))
                     ?.Value
                 ?? "Utente";
+
+            string? idfromClaims = jwtToken.Claims
+                    .FirstOrDefault(x =>
+                        x.Type.Contains("nameidentifier"))
+                    ?.Value;
+            idUtente = Convert.ToInt32(idfromClaims);
+
+
         }
         catch
         {
@@ -92,7 +101,8 @@ public class AuthServices
         {
             AccessToken = accessToken,
             RefreshToken = refreshToken,
-            Ruolo = ruolo
+            Ruolo = ruolo,
+            IDUtente = (int)idUtente
         };
     }
 }

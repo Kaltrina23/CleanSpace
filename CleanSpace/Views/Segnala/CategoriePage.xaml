@@ -25,7 +25,7 @@
 
                 <Label
                     Text="Categorie"
-                    FontSize="36"
+                    FontSize="32"
                     FontAttributes="Bold"
                     TextColor="#2D2D2D"
                     VerticalOptions="Center" />

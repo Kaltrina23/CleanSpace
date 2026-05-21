@@ -93,44 +93,6 @@
         </member>
         <member name="T:CleanSpace.ViewModels.InviaSegnalazioneViewModel">
             <inheritdoc/>
-            <inheritdoc/>
-            <inheritdoc/>
-        </member>
-        <member name="P:CleanSpace.ViewModels.InviaSegnalazioneViewModel.CategoriaId">
-            <inheritdoc cref="F:CleanSpace.ViewModels.InviaSegnalazioneViewModel.categoriaId"/>
-        </member>
-        <member name="P:CleanSpace.ViewModels.InviaSegnalazioneViewModel.CategoriaNome">
-            <inheritdoc cref="F:CleanSpace.ViewModels.InviaSegnalazioneViewModel.categoriaNome"/>
-        </member>
-        <member name="P:CleanSpace.ViewModels.InviaSegnalazioneViewModel.Posizione">
-            <inheritdoc cref="F:CleanSpace.ViewModels.InviaSegnalazioneViewModel.posizione"/>
-        </member>
-        <member name="P:CleanSpace.ViewModels.InviaSegnalazioneViewModel.Nota">
-            <inheritdoc cref="F:CleanSpace.ViewModels.InviaSegnalazioneViewModel.nota"/>
-        </member>
-        <member name="P:CleanSpace.ViewModels.InviaSegnalazioneViewModel.FotoPreview">
-            <inheritdoc cref="F:CleanSpace.ViewModels.InviaSegnalazioneViewModel.fotoPreview"/>
-        </member>
-        <member name="P:CleanSpace.ViewModels.InviaSegnalazioneViewModel.IsBusy">
-            <inheritdoc cref="F:CleanSpace.ViewModels.InviaSegnalazioneViewModel.isBusy"/>
-        </member>
-        <member name="P:CleanSpace.ViewModels.InviaSegnalazioneViewModel.IsGuest">
-            <inheritdoc cref="F:CleanSpace.ViewModels.InviaSegnalazioneViewModel.isGuest"/>
-        </member>
-        <member name="P:CleanSpace.ViewModels.InviaSegnalazioneViewModel.OspiteNome">
-            <inheritdoc cref="F:CleanSpace.ViewModels.InviaSegnalazioneViewModel.ospiteNome"/>
-        </member>
-        <member name="P:CleanSpace.ViewModels.InviaSegnalazioneViewModel.OspiteCognome">
-            <inheritdoc cref="F:CleanSpace.ViewModels.InviaSegnalazioneViewModel.ospiteCognome"/>
-        </member>
-        <member name="P:CleanSpace.ViewModels.InviaSegnalazioneViewModel.OspiteEmail">
-            <inheritdoc cref="F:CleanSpace.ViewModels.InviaSegnalazioneViewModel.ospiteEmail"/>
-        </member>
-        <member name="F:CleanSpace.ViewModels.InviaSegnalazioneViewModel.scattaFotoCommand">
-            <summary>The backing field for <see cref="P:CleanSpace.ViewModels.InviaSegnalazioneViewModel.ScattaFotoCommand"/>.</summary>
-        </member>
-        <member name="P:CleanSpace.ViewModels.InviaSegnalazioneViewModel.ScattaFotoCommand">
-            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:CleanSpace.ViewModels.InviaSegnalazioneViewModel.ScattaFoto"/>.</summary>
         </member>
         <member name="F:CleanSpace.ViewModels.InviaSegnalazioneViewModel.inviaCommand">
             <summary>The backing field for <see cref="P:CleanSpace.ViewModels.InviaSegnalazioneViewModel.InviaCommand"/>.</summary>
@@ -168,7 +130,6 @@
             <inheritdoc/>
             <inheritdoc/>
             <inheritdoc/>
-            <inheritdoc/>
         </member>
         <member name="P:CleanSpace.ViewModels.ProfiloUtenteViewModel.Nome">
             <inheritdoc cref="F:CleanSpace.ViewModels.ProfiloUtenteViewModel.nome"/>
@@ -186,12 +147,6 @@
             <summary>Executes the logic for when <see cref="P:CleanSpace.ViewModels.ProfiloUtenteViewModel.IsBusy"/> just changed.</summary>
             <param name="value">The new property value that was set.</param>
             <remarks>This method is invoked right after the value of <see cref="P:CleanSpace.ViewModels.ProfiloUtenteViewModel.IsBusy"/> is changed.</remarks>
-        </member>
-        <member name="F:CleanSpace.ViewModels.ProfiloUtenteViewModel.salvaCommand">
-            <summary>The backing field for <see cref="P:CleanSpace.ViewModels.ProfiloUtenteViewModel.SalvaCommand"/>.</summary>
-        </member>
-        <member name="P:CleanSpace.ViewModels.ProfiloUtenteViewModel.SalvaCommand">
-            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:CleanSpace.ViewModels.ProfiloUtenteViewModel.Salva"/>.</summary>
         </member>
         <member name="F:CleanSpace.ViewModels.ProfiloUtenteViewModel.apriStoricoCommand">
             <summary>The backing field for <see cref="P:CleanSpace.ViewModels.ProfiloUtenteViewModel.ApriStoricoCommand"/>.</summary>
@@ -340,41 +295,14 @@
         <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.NomeUtente">
             <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "NomeUtente" generated properties.</summary>
         </member>
-        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.CategoriaId">
-            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "CategoriaId" generated properties.</summary>
-        </member>
-        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.CategoriaNome">
-            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "CategoriaNome" generated properties.</summary>
-        </member>
-        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.Posizione">
-            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "Posizione" generated properties.</summary>
-        </member>
-        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.Nota">
-            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "Nota" generated properties.</summary>
-        </member>
-        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.FotoPreview">
-            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "FotoPreview" generated properties.</summary>
-        </member>
-        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.IsBusy">
-            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "IsBusy" generated properties.</summary>
-        </member>
-        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.IsGuest">
-            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "IsGuest" generated properties.</summary>
-        </member>
-        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.OspiteNome">
-            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "OspiteNome" generated properties.</summary>
-        </member>
-        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.OspiteCognome">
-            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "OspiteCognome" generated properties.</summary>
-        </member>
-        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.OspiteEmail">
-            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "OspiteEmail" generated properties.</summary>
-        </member>
         <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.Email">
             <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "Email" generated properties.</summary>
         </member>
         <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.Password">
             <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "Password" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.IsBusy">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "IsBusy" generated properties.</summary>
         </member>
         <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.Nome">
             <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "Nome" generated properties.</summary>
@@ -391,41 +319,14 @@
         <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.NomeUtente">
             <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "NomeUtente" generated properties.</summary>
         </member>
-        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.CategoriaId">
-            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "CategoriaId" generated properties.</summary>
-        </member>
-        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.CategoriaNome">
-            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "CategoriaNome" generated properties.</summary>
-        </member>
-        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.Posizione">
-            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "Posizione" generated properties.</summary>
-        </member>
-        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.Nota">
-            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "Nota" generated properties.</summary>
-        </member>
-        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.FotoPreview">
-            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "FotoPreview" generated properties.</summary>
-        </member>
-        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.IsBusy">
-            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "IsBusy" generated properties.</summary>
-        </member>
-        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.IsGuest">
-            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "IsGuest" generated properties.</summary>
-        </member>
-        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.OspiteNome">
-            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "OspiteNome" generated properties.</summary>
-        </member>
-        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.OspiteCognome">
-            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "OspiteCognome" generated properties.</summary>
-        </member>
-        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.OspiteEmail">
-            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "OspiteEmail" generated properties.</summary>
-        </member>
         <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.Email">
             <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "Email" generated properties.</summary>
         </member>
         <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.Password">
             <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "Password" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.IsBusy">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "IsBusy" generated properties.</summary>
         </member>
         <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.Nome">
             <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "Nome" generated properties.</summary>

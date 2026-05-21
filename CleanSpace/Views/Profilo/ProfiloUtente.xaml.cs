@@ -1,13 +1,15 @@
 using CleanSpace.ViewModels;
+using System.Runtime.CompilerServices;
 
 namespace CleanSpace.Views.Profilo;
 
 public partial class ProfiloUtente : ContentPage
 {
-	public ProfiloUtente(ProfiloUtenteViewModel viewModel)
+	private readonly ProfiloUtenteViewModel _viewModel;
+    public ProfiloUtente(ProfiloUtenteViewModel viewModel)
 	{
 		InitializeComponent();
-
-		BindingContext = viewModel;
+        _viewModel = viewModel;
+        BindingContext = _viewModel;
 	}
 }

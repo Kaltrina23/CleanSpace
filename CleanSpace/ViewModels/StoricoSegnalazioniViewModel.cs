@@ -6,30 +6,24 @@ using CleanSpace.DTOs;
 
 namespace CleanSpace.ViewModels;
 
-public partial class StoricoSegnalazioniViewModel
-    : ObservableObject
+public partial class StoricoSegnalazioniViewModel : ObservableObject
 {
-    private readonly
-        StoricoSegnalazioniService _service;
+    private readonly StoricoSegnalazioniService _service;
 
-    public ObservableCollection <StoricoSegnalazioneDto> Segnalazioni
-    { get; set; } = new();
+    public ObservableCollection <StoricoSegnalazioneDto> Segnalazioni { get; set; } = new();
 
-    public StoricoSegnalazioniViewModel(
-        StoricoSegnalazioniService service)
+    public StoricoSegnalazioniViewModel(StoricoSegnalazioniService service)
     {
         _service = service;
 
-        Task.Run(async () =>
-            await LoadStorico());
+        Task.Run(async () =>  await LoadStorico());
     }
 
     private async Task LoadStorico()
     {
         try
         {
-            var lista =
-                await _service.GetStorico();
+            var lista =  await _service.GetStorico();
 
             MainThread.BeginInvokeOnMainThread(() =>
             {

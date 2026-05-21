@@ -89,6 +89,12 @@ build_metadata.AdditionalFiles.ManifestResourceName = CleanSpace.Views.Component
 build_metadata.AdditionalFiles.TargetPath = Views\Components\InfoCard.xaml
 build_metadata.AdditionalFiles.RelativePath = Views\Components\InfoCard.xaml
 
+[C:/Users/stage-karucaj/source/repos/CleanSpace/CleanSpace/Views/Components/Navbar.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = CleanSpace.Views.Components.Navbar.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\Components\Navbar.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\Components\Navbar.xaml
+
 [C:/Users/stage-karucaj/source/repos/CleanSpace/CleanSpace/Views/Components/SegnalazioneCard.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = CleanSpace.Views.Components.SegnalazioneCard.xaml

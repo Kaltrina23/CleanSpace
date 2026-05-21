@@ -1,9 +1,10 @@
 using CleanSpace.ViewModels;
+using Microsoft.Maui.Controls.Maps;
+using Microsoft.Maui.Maps;
 
 namespace CleanSpace.Views.Segnala;
 
 [QueryProperty(nameof(CategoriaId), "categoriaId")]
-[QueryProperty(nameof(CategoriaNome), "categoriaNome")]
 
 public partial class InviaSegnalazione : ContentPage
 {
@@ -13,54 +14,55 @@ public partial class InviaSegnalazione : ContentPage
     {
         set
         {
-            _viewModel.CategoriaId = int.Parse(value);
+            _viewModel.CategoriaID = int.Parse(value);
         }
     }
 
-    public string CategoriaNome
-    {
-        set
-        {
-            _viewModel.CategoriaNome = Uri.UnescapeDataString(value);
-        }
-    }
 
     public InviaSegnalazione(InviaSegnalazioneViewModel viewModel)
     {
         InitializeComponent();
-
         _viewModel = viewModel;
-
         BindingContext = _viewModel;
+
+        MapPosition.MoveToRegion(MapSpan.FromCenterAndRadius(new Location(45.434245, 12.334466), Distance.FromKilometers(3)));
     }
 
-    async void Foto(object sender, EventArgs e)
+
+    async void ScattaFoto(object sender, EventArgs e)
     {
-        PermissionStatus status = await Permissions.CheckStatusAsync<Permissions.Camera>();
-        if (status != PermissionStatus.Granted)
-            status = await Permissions.RequestAsync<Permissions.Camera>();
-
-        if (status != PermissionStatus.Granted)
+        if (!MediaPicker.Default.IsCaptureSupported)
+        {
+            await DisplayAlert("Errore", "Fotocamera non accessibile per questo dispositivo", "OK");
             return;
-
-        if (MediaPicker.Default.IsCaptureSupported){
-            FileResult? photo = await MediaPicker.Default.CapturePhotoAsync();
-            if (photo != null)
-            {
-                using var stream = await photo.OpenReadAsync();
-                string base64 = ConvertToBase64(stream);
-                await DisplayAlert("OK", "Foto convertita in Base64!", "OK"); 
-            }
         }
 
+        FileResult? photo = await MediaPicker.Default.CapturePhotoAsync(new MediaPickerOptions
+        {
+            Title = "Scatta un foto"
+        });
+
+        //caso in cui l'utente decide di non scattare la foto
+        if (photo == null)
+            return;
+
+        await _viewModel.SalvaFoto(photo);
+
+        ImmagineScattata.Source = ImageSource.FromFile(photo.FullPath);
+        ImmagineScattata.IsVisible = true;
+    }
+    private void PosizioneImpostata(object sender, MapClickedEventArgs e)
+    {
+        double latitudine = e.Location.Latitude;
+        double longitudine = e.Location.Longitude;
+
+        _viewModel.SalvaPosizione(latitudine, longitudine);
     }
 
-    string ConvertToBase64(Stream stream)
+    async void Invia(object sender, EventArgs e)
     {
-        using var memoryStream = new MemoryStream();
-        stream.CopyTo(memoryStream);
-        byte[] imageBytes = memoryStream.ToArray();
-
-        return Convert.ToBase64String(imageBytes);
+        IsBusy = true;
+        await _viewModel.Invia();
+        IsBusy = false;
     }
 }

@@ -1,17 +1,14 @@
-﻿using CleanSpace.DTOs;
-using CleanSpace.Services;
+﻿using CleanSpace.Services;
 using CleanSpace.Views.Auth;
 using CleanSpace.Views.Profilo;
-
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 
 namespace CleanSpace.ViewModels;
 
-public partial class ProfiloUtenteViewModel
-    : ObservableObject
+public partial class ProfiloUtenteViewModel : ObservableObject
 {
-    private readonly ProfiloService _profiloService;
+    private readonly TokenService _tokenService;
 
     [ObservableProperty]
     private string nome;
@@ -27,13 +24,11 @@ public partial class ProfiloUtenteViewModel
 
     public bool IsNotBusy => !IsBusy;
 
-    public ProfiloUtenteViewModel(
-        ProfiloService profiloService)
+    public ProfiloUtenteViewModel(TokenService tokenService)
     {
-        _profiloService = profiloService;
+        _tokenService = tokenService;
 
-        Task.Run(async () =>
-            await LoadUtente());
+        Task.Run(async () => await LoadUtente());
     }
 
     partial void OnIsBusyChanged(bool value)
@@ -47,15 +42,10 @@ public partial class ProfiloUtenteViewModel
 
         try
         {
-            var utente =
-                await _profiloService
-                    .GetProfilo();
+            Nome = await _tokenService.GetNome();
+            Cognome = await _tokenService.GetCognome();
+            Email = await _tokenService.GetEmail();
 
-            Nome = utente.Nome;
-
-            Cognome = utente.Cognome;
-
-            Email = utente.Email;
         }
         catch (Exception ex)
         {
@@ -70,61 +60,53 @@ public partial class ProfiloUtenteViewModel
         }
     }
 
-    [RelayCommand]
-    private async Task Salva()
-    {
-        if (IsBusy)
-            return;
+    //[RelayCommand]
+    //private async Task Salva()
+    //{
+    //    if (IsBusy)
+    //        return;
 
-        IsBusy = true;
+    //    IsBusy = true;
 
-        try
-        {
-            var dto =
-                new AggiornaProfiloDto
-                {
-                    Nome = Nome,
-                    Cognome = Cognome,
-                    Email = Email
-                };
+    //    try
+    //    {
+    //        await _tokenService.SaveNome(Nome);
 
-            await _profiloService
-                .AggiornaProfilo(dto);
+    //        await _tokenService.SaveCognome(Cognome);
 
-            await Shell.Current.DisplayAlert(
-                "Successo",
-                "Profilo aggiornato",
-                "OK");
-        }
-        catch (Exception ex)
-        {
-            await Shell.Current.DisplayAlert(
-                "Errore",
-                ex.Message,
-                "OK");
-        }
-        finally
-        {
-            IsBusy = false;
-        }
-    }
+    //        await _tokenService.SaveEmail(Email);
+
+    //        await Shell.Current.DisplayAlert(
+    //            "Successo",
+    //            "Profilo aggiornato",
+    //            "OK");
+    //    }
+    //    catch (Exception ex)
+    //    {
+    //        await Shell.Current.DisplayAlert(
+    //            "Errore",
+    //            ex.Message,
+    //            "OK");
+    //    }
+    //    finally
+    //    {
+    //        IsBusy = false;
+    //    }
+    //}
 
     [RelayCommand]
     private async Task ApriStorico()
     {
-        await Shell.Current.GoToAsync(
-            nameof(StoricoSegnalazioni));
+        await Shell.Current.GoToAsync(nameof(StoricoSegnalazioni));
     }
 
     [RelayCommand]
     private async Task Logout()
     {
-        SecureStorage.Remove("access_token");
+        _tokenService.Logout();
 
-        Application.Current.MainPage =
-            new AppShell();
+        Application.Current.MainPage = new AppShell();
 
-        await Shell.Current.GoToAsync(
-            $"//{nameof(LoginPage)}");
+        await Shell.Current.GoToAsync( $"//{nameof(LoginPage)}");
     }
 }

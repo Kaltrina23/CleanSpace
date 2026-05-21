@@ -11,23 +11,15 @@ public partial class HomeOperatoreViewModel
 {
     private readonly SegnalazioniService _segnalazioniService;
 
-    private List<SegnalazioneRispostaDto>
-        _tutteSegnalazioni;
+    private List<SegnalazioneRispostaDto> _tutteSegnalazioni;
 
-    public ObservableCollection<SegnalazioneRispostaDto>
-        Segnalazioni
-    { get; set; } = new();
+    public ObservableCollection<SegnalazioneRispostaDto> Segnalazioni { get; set; } = new();
 
-    public HomeOperatoreViewModel
-    (
-        SegnalazioniService segnalazioniService
-    )
+    public HomeOperatoreViewModel(SegnalazioniService segnalazioniService)
     {
-        _segnalazioniService =
-            segnalazioniService;
+        _segnalazioniService = segnalazioniService;
 
-        _tutteSegnalazioni =
-            new List<SegnalazioneRispostaDto>();
+        _tutteSegnalazioni = new List<SegnalazioneRispostaDto>();
 
         Task.Run(LoadSegnalazioni);
     }
@@ -91,10 +83,7 @@ public partial class HomeOperatoreViewModel
     }
 
     [RelayCommand]
-    private async Task PrioritaAlta
-    (
-        SegnalazioneRispostaDto segnalazione
-    )
+    private async Task PrioritaAlta(SegnalazioneRispostaDto segnalazione)
     {
         if (segnalazione == null)
             return;
@@ -114,10 +103,7 @@ public partial class HomeOperatoreViewModel
     }
 
     [RelayCommand]
-    private async Task PrioritaMedia
-    (
-        SegnalazioneRispostaDto segnalazione
-    )
+    private async Task PrioritaMedia(SegnalazioneRispostaDto segnalazione)
     {
         if (segnalazione == null)
             return;
@@ -127,8 +113,7 @@ public partial class HomeOperatoreViewModel
                 segnalazione.Id,
                 "Media");
 
-        segnalazione.Priorita =
-            "Media";
+        segnalazione.Priorita = "Media";
 
         await Shell.Current.DisplayAlert(
             "Priorità aggiornata",
@@ -137,10 +122,7 @@ public partial class HomeOperatoreViewModel
     }
 
     [RelayCommand]
-    private async Task PrioritaBassa
-    (
-        SegnalazioneRispostaDto segnalazione
-    )
+    private async Task PrioritaBassa(SegnalazioneRispostaDto segnalazione)
     {
         if (segnalazione == null)
             return;
@@ -160,10 +142,7 @@ public partial class HomeOperatoreViewModel
     }
 
     [RelayCommand]
-    private async Task Approva
-    (
-        SegnalazioneRispostaDto segnalazione
-    )
+    private async Task Approva(SegnalazioneRispostaDto segnalazione)
     {
         if (segnalazione == null)
             return;
@@ -181,10 +160,7 @@ public partial class HomeOperatoreViewModel
     }
 
     [RelayCommand]
-    private async Task Elimina
-    (
-        SegnalazioneRispostaDto segnalazione
-    )
+    private async Task Elimina(SegnalazioneRispostaDto segnalazione)
     {
         if (segnalazione == null)
             return;

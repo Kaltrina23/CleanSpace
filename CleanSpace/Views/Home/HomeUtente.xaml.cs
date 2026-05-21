@@ -11,9 +11,4 @@ public partial class HomeUtente : ContentPage
 
         BindingContext = viewModel;
     }
-
-    private async void ApriProfilo(object sender, EventArgs e)
-    {
-        await Shell.Current.GoToAsync(nameof(ProfiloUtente));
-    }
 }

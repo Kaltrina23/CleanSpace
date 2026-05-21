@@ -11,9 +11,7 @@ public partial class CategoriaViewModel : ObservableObject
 {
     private readonly CategorieService _apiService;
 
-    public ObservableCollection<Categoria>
-        Categorie
-    { get; set; } = new();
+    public ObservableCollection<Categoria> Categorie { get; set; } = new();
 
     public CategoriaViewModel(CategorieService apiService)
     {
@@ -27,8 +25,7 @@ public partial class CategoriaViewModel : ObservableObject
     {
         try
         {
-            var lista =
-                await _apiService.GetCategorie();
+            var lista = await _apiService.GetCategorie();
 
             MainThread.BeginInvokeOnMainThread(() =>
             {
@@ -50,16 +47,12 @@ public partial class CategoriaViewModel : ObservableObject
     }
 
     [RelayCommand]
-    private async Task SelezionaCategoria(
-        Categoria categoria)
+    private async Task SelezionaCategoria(Categoria categoria)
     {
         if (categoria == null)
             return;
 
-        await Shell.Current.GoToAsync(
-            $"{nameof(InviaSegnalazione)}" +
-            $"?categoriaId={categoria.Id}" +
-            $"&categoriaNome={categoria.Nome}");
+        await Shell.Current.GoToAsync( $"{nameof(InviaSegnalazione)}" +  $"?categoriaId={categoria.Id}");
     }
 
     [RelayCommand]

@@ -9,10 +9,11 @@
     ".NETCoreApp,Version=v9.0/win10-x64": {
       "CleanSpace/1.0": {
         "dependencies": {
-          "CommunityToolkit.Maui": "9.0.0",
+          "CommunityToolkit.Maui": "9.1.0",
           "CommunityToolkit.Mvvm": "8.4.2",
           "Microsoft.Extensions.Logging.Debug": "9.0.8",
           "Microsoft.Maui.Controls": "9.0.120",
+          "Microsoft.Maui.Controls.Maps": "9.0.120",
           "Syncfusion.Maui.Buttons": "33.2.5",
           "Syncfusion.Maui.Toolkit": "1.0.9",
           "System.IdentityModel.Tokens.Jwt": "8.18.0",
@@ -41,11 +42,10 @@
           }
         }
       },
-      "CommunityToolkit.Maui/9.0.0": {
+      "CommunityToolkit.Maui/9.1.0": {
         "dependencies": {
-          "CommunityToolkit.Maui.Core": "9.0.0",
-          "Microsoft.Maui.Controls": "9.0.120",
-          "Microsoft.Maui.Controls.Compatibility": "8.0.14"
+          "CommunityToolkit.Maui.Core": "9.1.0",
+          "Microsoft.Maui.Controls": "9.0.120"
         },
         "runtime": {
           "lib/net8.0-windows10.0.19041/CommunityToolkit.Maui.dll": {
@@ -54,7 +54,7 @@
           }
         }
       },
-      "CommunityToolkit.Maui.Core/9.0.0": {
+      "CommunityToolkit.Maui.Core/9.1.0": {
         "dependencies": {
           "Microsoft.Maui.Core": "9.0.120",
           "Microsoft.Maui.Essentials": "9.0.120",
@@ -262,20 +262,6 @@
           "Microsoft.Maui.Controls.Xaml": "9.0.120"
         }
       },
-      "Microsoft.Maui.Controls.Compatibility/8.0.14": {
-        "dependencies": {
-          "Microsoft.Extensions.Configuration": "9.0.9",
-          "Microsoft.Extensions.Logging.Abstractions": "9.0.9",
-          "Microsoft.Maui.Controls.Core": "9.0.120",
-          "Microsoft.Maui.Controls.Xaml": "9.0.120"
-        },
-        "runtime": {
-          "lib/net8.0-windows10.0.19041/Microsoft.Maui.Controls.Compatibility.dll": {
-            "assemblyVersion": "1.0.0.0",
-            "fileVersion": "8.0.10.4"
-          }
-        }
-      },
       "Microsoft.Maui.Controls.Core/9.0.120": {
         "dependencies": {
           "Microsoft.Extensions.Configuration": "9.0.9",
@@ -395,6 +381,17 @@
           }
         }
       },
+      "Microsoft.Maui.Controls.Maps/9.0.120": {
+        "dependencies": {
+          "Microsoft.Maui.Maps": "9.0.120"
+        },
+        "runtime": {
+          "lib/net9.0-windows10.0.19041/Microsoft.Maui.Controls.Maps.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "9.1.2025.51506"
+          }
+        }
+      },
       "Microsoft.Maui.Controls.Xaml/9.0.120": {
         "dependencies": {
           "Microsoft.Extensions.Configuration": "9.0.9",
@@ -461,6 +458,14 @@
         },
         "runtime": {
           "lib/net9.0-windows10.0.19041/Microsoft.Maui.Graphics.Win2D.WinUI.Desktop.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "9.1.2025.51506"
+          }
+        }
+      },
+      "Microsoft.Maui.Maps/9.0.120": {
+        "runtime": {
+          "lib/net9.0-windows10.0.19041/Microsoft.Maui.Maps.dll": {
             "assemblyVersion": "1.0.0.0",
             "fileVersion": "9.1.2025.51506"
           }
@@ -744,19 +749,19 @@
       "serviceable": false,
       "sha512": ""
     },
-    "CommunityToolkit.Maui/9.0.0": {
+    "CommunityToolkit.Maui/9.1.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-G1z3FFAokpu18rDt4L2SZj827xIzqOv7PLq54Lxx46/57zUa8QjVTRTowl6s1qAeSW9r4XyFwnTb1sY1KOnzWg==",
-      "path": "communitytoolkit.maui/9.0.0",
-      "hashPath": "communitytoolkit.maui.9.0.0.nupkg.sha512"
+      "sha512": "sha512-lIFWonOHrHSMLrU8Oc58cmA+oPCi5F/EmD4/Zqc2yryv8upH0tdaeU+SloG1zEFWjNlVeOT9wUfPk3qPMI0iOQ==",
+      "path": "communitytoolkit.maui/9.1.0",
+      "hashPath": "communitytoolkit.maui.9.1.0.nupkg.sha512"
     },
-    "CommunityToolkit.Maui.Core/9.0.0": {
+    "CommunityToolkit.Maui.Core/9.1.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-wzOYHQPs5yokoYyoCm2Ri5RDEkDmnvSklotzp0M4jfOE5M0ZPmCDvEVUJpVzZR9J5cudPlsL3Hh1cK3QzQd2NQ==",
-      "path": "communitytoolkit.maui.core/9.0.0",
-      "hashPath": "communitytoolkit.maui.core.9.0.0.nupkg.sha512"
+      "sha512": "sha512-aPVPB06syj/nrSkmiFwtFQkOGE2KkUYYjp8VbdyxhafcdSZgehEhQUtJ/R3ogBvL8f3a7bjj0ercHKuUEHrkcQ==",
+      "path": "communitytoolkit.maui.core/9.1.0",
+      "hashPath": "communitytoolkit.maui.core.9.1.0.nupkg.sha512"
     },
     "CommunityToolkit.Mvvm/8.4.2": {
       "type": "package",
@@ -891,19 +896,19 @@
       "path": "microsoft.maui.controls.build.tasks/9.0.120",
       "hashPath": "microsoft.maui.controls.build.tasks.9.0.120.nupkg.sha512"
     },
-    "Microsoft.Maui.Controls.Compatibility/8.0.14": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-XeDdpsxQHhwbAlT8W5R6QBNpRa8Z31nqE/IXuchYW/Q4a6O+OlZS01LxdhhcLvWy2qGnx2hRIYvojdFTpAvnfA==",
-      "path": "microsoft.maui.controls.compatibility/8.0.14",
-      "hashPath": "microsoft.maui.controls.compatibility.8.0.14.nupkg.sha512"
-    },
     "Microsoft.Maui.Controls.Core/9.0.120": {
       "type": "package",
       "serviceable": true,
       "sha512": "sha512-TSXVtNZvywsKgTYxuCOZooqzVBKdUPAp1wkzMfvKx/pMGLKhYWWQiIaC8sIob4eHMmMsei+tMUA+rfn3fyDZUQ==",
       "path": "microsoft.maui.controls.core/9.0.120",
       "hashPath": "microsoft.maui.controls.core.9.0.120.nupkg.sha512"
+    },
+    "Microsoft.Maui.Controls.Maps/9.0.120": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-mi+aOvhSoDsl8BHdKTkwZ6gGnt8fgr+6dzcTzq1livFC1m1LdkBjDGoxk6EHt8iyDWwyFsYFQi2uojpoP0EUtQ==",
+      "path": "microsoft.maui.controls.maps/9.0.120",
+      "hashPath": "microsoft.maui.controls.maps.9.0.120.nupkg.sha512"
     },
     "Microsoft.Maui.Controls.Xaml/9.0.120": {
       "type": "package",
@@ -939,6 +944,13 @@
       "sha512": "sha512-/s0fGk4E7OK/1Lg7agAl8rAhxsdtO4kJPlYTd1bxowAQlTfpA1vXt7Bln9VFOauh6tY6n5Ok3iTk8cYZQCKauA==",
       "path": "microsoft.maui.graphics.win2d.winui.desktop/9.0.120",
       "hashPath": "microsoft.maui.graphics.win2d.winui.desktop.9.0.120.nupkg.sha512"
+    },
+    "Microsoft.Maui.Maps/9.0.120": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-CT9JusgZ7nAdDr8Emrn/75tD20Pj1mw2VXjCPJi3aYvo2Bi9P4qcuPP6f6aNB/s9wCKexbfkchV4FI45H4TSWw==",
+      "path": "microsoft.maui.maps/9.0.120",
+      "hashPath": "microsoft.maui.maps.9.0.120.nupkg.sha512"
     },
     "Microsoft.Maui.Resizetizer/9.0.120": {
       "type": "package",

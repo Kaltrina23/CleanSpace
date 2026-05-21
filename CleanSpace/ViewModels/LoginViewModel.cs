@@ -22,9 +22,7 @@ public partial class LoginViewModel : ObservableObject
     [ObservableProperty]
     private bool isBusy;
 
-    public LoginViewModel(
-        AuthServices authServices,
-        TokenService tokenService)
+    public LoginViewModel(AuthServices authServices, TokenService tokenService)
     {
         _authServices = authServices;
         _tokenService = tokenService;
@@ -33,8 +31,7 @@ public partial class LoginViewModel : ObservableObject
     [RelayCommand]
     private async Task Login()
     {
-        if (string.IsNullOrWhiteSpace(Email) ||
-            string.IsNullOrWhiteSpace(Password))
+        if (string.IsNullOrWhiteSpace(Email) || string.IsNullOrWhiteSpace(Password))
         {
             await Shell.Current.DisplayAlert(
                 "Errore",
@@ -48,10 +45,10 @@ public partial class LoginViewModel : ObservableObject
         {
             IsBusy = true;
 
-            var result =
-                await _authServices.Login(
-                    Email,
-                    Password);
+            var result = await _authServices.Login(Email, Password);
+
+
+            System.Diagnostics.Debug.WriteLine(result);
 
             if (result == null)
             {
@@ -63,21 +60,22 @@ public partial class LoginViewModel : ObservableObject
                 return;
             }
 
-            // SALVATAGGIO TOKEN
-            await _tokenService.SaveAccessToken(
-                result.AccessToken);
+            //Salvo il token
+            await _tokenService.SaveAccessToken(result.AccessToken);
 
-            await _tokenService.SaveRefreshToken(
-                result.RefreshToken);
+            await _tokenService.SaveRefreshToken(result.RefreshToken);
 
-            await _tokenService.SaveRole(
-                result.Ruolo);
+            await _tokenService.SaveRole(result.Ruolo);
 
-            await _tokenService.SaveNome(
-                result.Nome ?? "");
 
-            await _tokenService.SaveCognome(
-                result.Cognome ?? "");
+            //await _tokenService.SaveNome(
+            //    result.Nome ?? "");
+
+            //await _tokenService.SaveCognome(
+            //    result.Cognome ?? "");
+
+            //await _tokenService.SaveEmail(
+            //    result.Cognome ?? "");
 
             // NON È GUEST
             await _tokenService.SetGuest(false);
@@ -113,13 +111,13 @@ public partial class LoginViewModel : ObservableObject
     [RelayCommand]
     private async Task GuestLogin()
     {
-        // PULIZIA DATI LOGIN PRECEDENTE
+        //rimozione del token precedente
         _tokenService.Logout();
 
-        // IMPOSTO GUEST
+        //imposto ruolo a guest
         await _tokenService.SetGuest(true);
 
-        // NAVIGAZIONE
+        //navigazione
         await Shell.Current.GoToAsync(nameof(CategoriePage));
     }
 }

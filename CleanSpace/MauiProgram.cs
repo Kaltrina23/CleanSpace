@@ -24,7 +24,8 @@ namespace CleanSpace
                 {
                     fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
                     fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
-                });
+                })
+                .UseMauiMaps();
 
             //Services
             // HTTP CLIENT
@@ -41,8 +42,7 @@ namespace CleanSpace
 
                 var client = new HttpClient(handler);
 
-                client.BaseAddress =
-                    new Uri("https://10.0.2.2:7097/api/");
+                client.BaseAddress = new Uri("https://192.168.250.107:7097/api/");
 
                 return client;
             });

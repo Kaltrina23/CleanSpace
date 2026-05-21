@@ -3,6 +3,7 @@ using CleanSpace.Services;
 
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
+using System.Threading.Tasks;
 
 namespace CleanSpace.ViewModels;
 
@@ -12,225 +13,99 @@ public partial class InviaSegnalazioneViewModel : ObservableObject
 
     private readonly TokenService _tokenService;
 
-    [ObservableProperty]
-    private int categoriaId;
+    public Segnalazione Segnalazione { get; set; } = new Segnalazione();
+    public int CategoriaID = 1;
+    public string CategoriaNomeQuery = "nome";
+    public bool IsGuest { get; set; }
 
-    [ObservableProperty]
-    private string categoriaNome;
-
-    [ObservableProperty]
-    private string posizione;
-
-    [ObservableProperty]
-    private string nota;
-
-    [ObservableProperty]
-    private string fotoPreview;
-
-    [ObservableProperty]
-    private bool isBusy;
-
-    [ObservableProperty]
-    private bool isGuest;
-
-    [ObservableProperty]
-    private string ospiteNome;
-
-    [ObservableProperty]
-    private string ospiteCognome;
-
-    [ObservableProperty]
-    private string ospiteEmail;
-
-    private double _latitudine;
-
-    private double _longitudine;
-
-    private string? _fotoBase64;
-
-    public string CategoriaIdQuery
+    public InviaSegnalazioneViewModel (SegnalazioniService segnalazioniService, TokenService tokenService)
     {
-        set
+        _segnalazioniService = segnalazioniService;
+
+        _tokenService = tokenService;
+
+        Task.Run(() =>
         {
-            CategoriaId = int.Parse(value);
-        }
-    }
-
-    public string CategoriaNomeQuery
-    {
-        set
-        {
-            categoriaNome =
-                Uri.UnescapeDataString(value);
-        }
-    }
-
-    public InviaSegnalazioneViewModel
-    (
-        SegnalazioniService segnalazioniService,
-        TokenService tokenService
-    )
-    {
-        _segnalazioniService =
-            segnalazioniService;
-
-        _tokenService =
-            tokenService;
-
-        Task.Run(async () =>
-        {
-            await GetLocation();
-
-            await CaricaGuest();
+            CaricaGuest();
         });
     }
 
     private async Task CaricaGuest()
     {
-        IsGuest =
-            await _tokenService.IsGuest();
+        IsGuest =  await _tokenService.IsGuest();
     }
 
-    private async Task GetLocation()
+    public async Task  SalvaFoto(FileResult foto)
     {
-        try
-        {
-            var location =
-                await Geolocation.Default.GetLocationAsync();
+        Segnalazione.FotobBase64 = await ConvertToBase64(foto);
+    }
 
-            if (location != null)
-            {
-                _latitudine =
-                    location.Latitude;
+    public async Task SalvaPosizione (double latitudine, double longitudine)
+    {
+        Segnalazione.Posizione.Lat = latitudine;
+        Segnalazione.Posizione.Long = longitudine;
+        int idComune = await _segnalazioniService.GetComuneID(latitudine, longitudine);
+        Segnalazione.Posizione.IDComune = idComune;
+    }
 
-                _longitudine =
-                    location.Longitude;
+    private async Task<string> ConvertToBase64(FileResult photo)
+    {
+        var stream = await photo.OpenReadAsync();
+        using var memoryStream = new MemoryStream();
 
-                Posizione =
-                    $"{_latitudine:F5}, {_longitudine:F5}";
-            }
-        }
-        catch
-        {
-            Posizione =
-                "Posizione non disponibile";
-        }
+        await stream.CopyToAsync(memoryStream);
+        byte[] imageBytes = memoryStream.ToArray();
+
+        return Convert.ToBase64String(imageBytes);
     }
 
     [RelayCommand]
-    private async Task ScattaFoto()
+    public async Task Invia()
     {
         try
         {
-            var foto =
-                await MediaPicker.Default.CapturePhotoAsync();
-
-            if (foto == null)
-                return;
-
-            using var stream =
-                await foto.OpenReadAsync();
-
-            using var memory =
-                new MemoryStream();
-
-            await stream.CopyToAsync(memory);
-
-            var bytes =
-                memory.ToArray();
-
-            _fotoBase64 =
-                Convert.ToBase64String(bytes);
-
-            FotoPreview =
-                foto.FullPath;
-        }
-        catch
-        {
-            await Shell.Current.DisplayAlert(
-                "Errore",
-                "Impossibile aprire la fotocamera",
-                "OK");
-        }
-    }
-
-    [RelayCommand]
-    private async Task Invia()
-    {
-        try
-        {
-            IsBusy = true;
-
             if (IsGuest)
             {
-                if (
-                    string.IsNullOrWhiteSpace(OspiteNome)
-                    ||
-                    string.IsNullOrWhiteSpace(OspiteCognome)
-                    ||
-                    string.IsNullOrWhiteSpace(OspiteEmail)
-                )
+                if (string.IsNullOrWhiteSpace(Segnalazione.OspiteNome) || string.IsNullOrWhiteSpace(Segnalazione.OspiteCognome) || string.IsNullOrWhiteSpace(Segnalazione.OspiteEmail))
                 {
                     await Shell.Current.DisplayAlert(
                         "Errore",
-                        "Compila tutti i campi ospite",
+                        "Compila tutti i campi",
                         "OK");
-
                     return;
                 }
             }
 
-            if (
-                double.IsNaN(_latitudine)
-                ||
-                double.IsNaN(_longitudine)
-            )
-            {
-                await Shell.Current.DisplayAlert(
-                    "Errore",
-                    "Posizione non valida",
-                    "OK");
+            //if (double.IsNaN(_latitudine) || double.IsNaN(_longitudine))
+            //{
+            //    await Shell.Current.DisplayAlert(
+            //        "Errore",
+            //        "Inserire la posizione",
+            //        "OK");
+            //    return;
+            //}
 
-                return;
-            }
 
-            var dto =
-                new InviaSegnalazioneDto
-                {
-                    CategoriaId =
-                        CategoriaId,
+            InviaSegnalazioneDto dto = new InviaSegnalazioneDto();
+            dto.CategoriaId = CategoriaID;
+            dto.ComuneId = Segnalazione.Posizione.IDComune;
+            dto.Latitudine = (decimal)Segnalazione.Posizione.Lat;
+            dto.Longitudine = (decimal)Segnalazione.Posizione.Long;
+            dto.Nota = Segnalazione.Nota;
+            dto.FotoBase64 = Segnalazione.FotobBase64;
+            dto.OspiteNome = Segnalazione.OspiteNome;
+            dto.OspiteCognome = Segnalazione.OspiteCognome;
+            dto.OspiteEmail = Segnalazione.OspiteEmail;
 
-                    Latitudine =
-                        Convert.ToDecimal(_latitudine),
 
-                    Longitudine =
-                        Convert.ToDecimal(_longitudine),
-
-                    Nota =
-                        Nota,
-
-                    FotoBase64 =
-                        _fotoBase64,
-
-                    OspiteNome =
-                        OspiteNome,
-
-                    OspiteCognome =
-                        OspiteCognome,
-
-                    OspiteEmail =
-                        OspiteEmail
-                };
-
-            await _segnalazioniService
-                .InviaSegnalazione(dto);
+            await _segnalazioniService.InviaSegnalazione(dto);
 
             await Shell.Current.DisplayAlert(
                 "Successo",
                 "Segnalazione inviata correttamente",
                 "OK");
 
-            await Shell.Current.GoToAsync("..");
+            await Shell.Current.GoToAsync("/HomeUtente");
         }
         catch (Exception ex)
         {
@@ -238,10 +113,6 @@ public partial class InviaSegnalazioneViewModel : ObservableObject
                 "Errore",
                 ex.Message,
                 "OK");
-        }
-        finally
-        {
-            IsBusy = false;
         }
     }
 }

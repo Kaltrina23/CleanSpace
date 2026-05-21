@@ -12,19 +12,17 @@ public class ApiService
 
     public ApiService(HttpClient httpClient)
     {
+
         this.HttpClient = httpClient;
     }
 
-    // TOKEN JWT
     protected async Task AddAuthorizationHeader()
     {
-        var token =
-            await SecureStorage.GetAsync("access_token");
+        var token =  await SecureStorage.GetAsync("access_token");
 
         if (!string.IsNullOrEmpty(token))
         {
-            HttpClient.DefaultRequestHeaders.Authorization =
-                new AuthenticationHeaderValue("Bearer", token);
+            HttpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
         }
     }
 }

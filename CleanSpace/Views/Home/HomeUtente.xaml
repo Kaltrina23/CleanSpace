@@ -10,30 +10,22 @@
     BackgroundColor="#F8FFF1"
     NavigationPage.HasNavigationBar="False">
 
-    <!-- CONTENUTO -->
-    <ScrollView VerticalScrollBarVisibility="Never">
+    <Grid RowDefinitions="60, *">
+        <components:Navbar Grid.Row="0"/>
 
-        <VerticalStackLayout
-            Padding="25,20,25,90"
-            Spacing="22">
+        <VerticalStackLayout VerticalOptions="Start"
+           Grid.Row="1" Padding="25,20,25,90"
+           Spacing="22">
 
-            <components:UtenteHeader/>
+            <!--<components:UtenteHeader/>-->
 
             <components:SegnalazioneCard/>
 
             <components:InfoCard/>
 
-            <Button
-                Text="Profilo"
-                Clicked="ApriProfilo"
-                HeightRequest="55"
-                CornerRadius="28"
-                BackgroundColor="#A3D214"
-                TextColor="White"
-                FontAttributes="Bold"/>
 
         </VerticalStackLayout>
+    </Grid>
 
-    </ScrollView>
 
 </ContentPage>

@@ -9,6 +9,7 @@ namespace CleanSpace.DTOs
     public class InviaSegnalazioneDto
     {
         public int CategoriaId { get; set; }
+        public int ComuneId { get; set; }
 
         public decimal Latitudine { get; set; }
         public decimal Longitudine { get; set; }

@@ -69,7 +69,7 @@
           "dependencies": {
             "CommunityToolkit.Maui": {
               "target": "Package",
-              "version": "[9.0.0, )"
+              "version": "[9.1.0, )"
             },
             "CommunityToolkit.Mvvm": {
               "target": "Package",
@@ -80,6 +80,10 @@
               "version": "[9.0.8, )"
             },
             "Microsoft.Maui.Controls": {
+              "target": "Package",
+              "version": "[9.0.120, )"
+            },
+            "Microsoft.Maui.Controls.Maps": {
               "target": "Package",
               "version": "[9.0.120, )"
             },
@@ -136,7 +140,7 @@
           "dependencies": {
             "CommunityToolkit.Maui": {
               "target": "Package",
-              "version": "[9.0.0, )"
+              "version": "[9.1.0, )"
             },
             "CommunityToolkit.Mvvm": {
               "target": "Package",
@@ -147,6 +151,10 @@
               "version": "[9.0.8, )"
             },
             "Microsoft.Maui.Controls": {
+              "target": "Package",
+              "version": "[9.0.120, )"
+            },
+            "Microsoft.Maui.Controls.Maps": {
               "target": "Package",
               "version": "[9.0.120, )"
             },
@@ -203,7 +211,7 @@
           "dependencies": {
             "CommunityToolkit.Maui": {
               "target": "Package",
-              "version": "[9.0.0, )"
+              "version": "[9.1.0, )"
             },
             "CommunityToolkit.Mvvm": {
               "target": "Package",
@@ -214,6 +222,10 @@
               "version": "[9.0.8, )"
             },
             "Microsoft.Maui.Controls": {
+              "target": "Package",
+              "version": "[9.0.120, )"
+            },
+            "Microsoft.Maui.Controls.Maps": {
               "target": "Package",
               "version": "[9.0.120, )"
             },
@@ -271,7 +283,7 @@
           "dependencies": {
             "CommunityToolkit.Maui": {
               "target": "Package",
-              "version": "[9.0.0, )"
+              "version": "[9.1.0, )"
             },
             "CommunityToolkit.Mvvm": {
               "target": "Package",
@@ -282,6 +294,10 @@
               "version": "[9.0.8, )"
             },
             "Microsoft.Maui.Controls": {
+              "target": "Package",
+              "version": "[9.0.120, )"
+            },
+            "Microsoft.Maui.Controls.Maps": {
               "target": "Package",
               "version": "[9.0.120, )"
             },

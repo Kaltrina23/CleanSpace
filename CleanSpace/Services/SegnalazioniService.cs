@@ -1,11 +1,12 @@
-﻿using System;
+﻿using CleanSpace.DTOs;
+using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http.Json;
 using System.Text;
-using System.Threading.Tasks;
 using System.Text.Json;
-
-using CleanSpace.DTOs;
+using System.Text.Json.Serialization;
+using System.Threading.Tasks;
 
 namespace CleanSpace.Services;
 
@@ -33,6 +34,25 @@ public class SegnalazioniService : ApiService
                 content);
 
         response.EnsureSuccessStatusCode();
+    }
+
+
+    public async Task<int> GetComuneID(double lat, double lon)
+    {
+        var response =
+            await HttpClient.GetAsync($"https://maps.googleapis.com/maps/api/geocode/json?latlng={lat},{lon}&key=AIzaSyBnnFLX8o76B0sS5lfXOXHFzjtiFDsS-nw");
+        response.EnsureSuccessStatusCode();
+
+        GoogleGeocodeResponse? datiPosizioneGoogle = await response.Content.ReadFromJsonAsync<GoogleGeocodeResponse>();
+        string? nomeComune = datiPosizioneGoogle.Results.First().AddressComponents.FirstOrDefault(x => x.Types.Contains("locality"))?.LongName;
+
+        await AddAuthorizationHeader();
+
+        var responseComune = await HttpClient.GetAsync($"segnalazioni/{nomeComune}/getIdComune");
+        responseComune.EnsureSuccessStatusCode();
+        string content = await responseComune.Content.ReadAsStringAsync();
+        int idComune = Convert.ToInt32(content);
+        return idComune;
     }
 
     // Lista
@@ -102,4 +122,51 @@ public class SegnalazioniService : ApiService
 
         response.EnsureSuccessStatusCode();
     }
+}
+
+
+
+public class GoogleGeocodeResponse
+{
+    [JsonPropertyName("status")]
+    public string Status { get; set; }
+
+    [JsonPropertyName("results")]
+    public List<GeocodeResult> Results { get; set; } = new();
+
+    [JsonPropertyName("error_message")]
+    public string? ErrorMessage { get; set; }
+}
+
+public class GeocodeResult
+{
+    [JsonPropertyName("address_components")]
+    public List<AddressComponent> AddressComponents { get; set; } = new();
+
+    [JsonPropertyName("formatted_address")]
+    public string FormattedAddress { get; set; } = string.Empty;
+}
+
+public class AddressComponent
+{
+    [JsonPropertyName("long_name")]
+    public string LongName { get; set; } = string.Empty;
+
+    [JsonPropertyName("short_name")]
+    public string ShortName { get; set; } = string.Empty;
+
+    [JsonPropertyName("types")]
+    public List<string> Types { get; set; } = new();
+}
+
+public class IndirizzoMaui
+{
+    public string Via { get; set; } = string.Empty;
+    public string Civico { get; set; } = string.Empty;
+    public string Citta { get; set; } = string.Empty;
+    public string Stato { get; set; } = string.Empty; // "HI"
+    public string Cap { get; set; } = string.Empty;
+    public string IndirizzoCompleto { get; set; } = string.Empty;
+
+   
 }

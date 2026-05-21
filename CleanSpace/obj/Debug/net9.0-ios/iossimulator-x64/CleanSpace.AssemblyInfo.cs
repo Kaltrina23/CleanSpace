@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("CleanSpace")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0+4cd9bd8d27baa7708354ee4566029778947b8c19")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0+90858cf25dae1c338d6e181dbad423dad3664dc3")]
 [assembly: System.Reflection.AssemblyProductAttribute("CleanSpace")]
 [assembly: System.Reflection.AssemblyTitleAttribute("CleanSpace")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

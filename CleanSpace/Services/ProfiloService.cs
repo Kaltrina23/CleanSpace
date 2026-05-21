@@ -1,13 +1,11 @@
 ﻿using CleanSpace.DTOs;
-
 using System.Net.Http.Json;
 
 namespace CleanSpace.Services;
 
 public class ProfiloService : ApiService
 {
-    public ProfiloService(HttpClient httpClient)
-        : base(httpClient)
+    public ProfiloService(HttpClient httpClient) : base(httpClient)
     {
     }
 

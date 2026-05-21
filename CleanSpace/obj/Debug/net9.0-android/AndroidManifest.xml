@@ -9,14 +9,13 @@
   <uses-sdk android:minSdkVersion="21" android:targetSdkVersion="35" />
   <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
   <uses-permission android:name="android.permission.INTERNET" />
-  <uses-permission android:name="android.permission.ACCESS_BACKGROUND_LOCATION" />
   <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
   <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
   <uses-permission android:name="android.permission.CAMERA" />
-  <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-  <uses-permission android:name="android.permission.CAPTURE_VIDEO_OUTPUT" />
-  <uses-permission android:name="android.permission.READ_MEDIA_IMAGES" />
+  <uses-feature android:name="android.hardware.camera" android:required="false" />
   <application android:allowBackup="true" android:usesCleartextTraffic="True" android:icon="@mipmap/appicon" android:supportsRtl="true" android:label="CleanSpace" android:name="crc64af28ee17d56c73c6.MainApplication" android:debuggable="true" android:extractNativeLibs="true">
+    <meta-data android:name="com.google.android.geo.API_KEY" android:value="AIzaSyBnnFLX8o76B0sS5lfXOXHFzjtiFDsS-nw" />
+    <uses-library android:name="org.apache.http.legacy" android:required="false" />
     <activity android:configChanges="density|orientation|smallestScreenSize|screenLayout|screenSize|uiMode" android:launchMode="singleTop" android:theme="@style/Maui.SplashTheme" android:name="crc64af28ee17d56c73c6.MainActivity" android:exported="true">
       <intent-filter>
         <action android:name="android.intent.action.MAIN" />
@@ -34,4 +33,9 @@
     <service android:name="crc64396a3fe5f8138e3f.KeepAliveService" />
     <provider android:name="mono.MonoRuntimeProvider" android:exported="false" android:initOrder="1999999999" android:authorities="com.companyname.cleanspace.mono.MonoRuntimeProvider.__mono_init__" />
   </application>
+  <queries>
+    <intent>
+      <action android:name="android.media.action.IMAGE_CAPTURE" />
+    </intent>
+  </queries>
 </manifest>

@@ -4,54 +4,38 @@
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:layouts="clr-namespace:CleanSpace.Views.Layouts"
+     xmlns:components="clr-namespace:CleanSpace.Views.Components"
     x:Class="CleanSpace.Views.Profilo.ProfiloUtente"
     BackgroundColor="#F8FFF1"
     NavigationPage.HasNavigationBar="False">
 
-    <layouts:PageLayout
-        Titolo="Profilo">
 
-        <VerticalStackLayout
-            Padding="24,20"
-            Spacing="20">
+    <Grid RowDefinitions="60, *">
+        <components:Navbar Grid.Row="0"/>
 
-            <!-- FOTO -->
-            <Frame
-                WidthRequest="120"
-                HeightRequest="120"
-                CornerRadius="60"
-                Padding="0"
-                BackgroundColor="#D9F99D"
-                HorizontalOptions="Center"
-                HasShadow="False">
-
-                <Image
-                    Source="person.svg"
-                    WidthRequest="55"
-                    HeightRequest="55"
-                    VerticalOptions="Center"
-                    HorizontalOptions="Center"/>
-            </Frame>
+        <VerticalStackLayout Grid.Row="1" VerticalOptions="Start"
+                 Padding="24,20"
+                 Spacing="20">
 
             <!-- NOME -->
             <Frame
-                CornerRadius="24"
-                Padding="18"
-                BackgroundColor="White"
-                BorderColor="#E5E7EB"
-                HasShadow="False">
+         CornerRadius="24"
+         Padding="18"
+         BackgroundColor="White"
+         BorderColor="#E5E7EB"
+         HasShadow="False">
 
                 <VerticalStackLayout Spacing="8">
 
                     <Label
-                        Text="Nome"
-                        FontAttributes="Bold"
-                        TextColor="#365314"/>
+                 Text="Nome"
+                 FontAttributes="Bold"
+                 TextColor="#365314"/>
 
                     <Entry
-                        Text="{Binding Nome}"
-                        BackgroundColor="#F9FAFB"
-                        TextColor="#111827"/>
+                 Text="{Binding Nome}"
+                 BackgroundColor="#F9FAFB"
+                 TextColor="#111827"/>
 
                 </VerticalStackLayout>
 
@@ -59,23 +43,23 @@
 
             <!-- COGNOME -->
             <Frame
-                CornerRadius="24"
-                Padding="18"
-                BackgroundColor="White"
-                BorderColor="#E5E7EB"
-                HasShadow="False">
+         CornerRadius="24"
+         Padding="18"
+         BackgroundColor="White"
+         BorderColor="#E5E7EB"
+         HasShadow="False">
 
                 <VerticalStackLayout Spacing="8">
 
                     <Label
-                        Text="Cognome"
-                        FontAttributes="Bold"
-                        TextColor="#365314"/>
+                 Text="Cognome"
+                 FontAttributes="Bold"
+                 TextColor="#365314"/>
 
                     <Entry
-                        Text="{Binding Cognome}"
-                        BackgroundColor="#F9FAFB"
-                        TextColor="#111827"/>
+                 Text="{Binding Cognome}"
+                 BackgroundColor="#F9FAFB"
+                 TextColor="#111827"/>
 
                 </VerticalStackLayout>
 
@@ -83,67 +67,66 @@
 
             <!-- EMAIL -->
             <Frame
-                CornerRadius="24"
-                Padding="18"
-                BackgroundColor="White"
-                BorderColor="#E5E7EB"
-                HasShadow="False">
+         CornerRadius="24"
+         Padding="18"
+         BackgroundColor="White"
+         BorderColor="#E5E7EB"
+         HasShadow="False">
 
                 <VerticalStackLayout Spacing="8">
 
                     <Label
-                        Text="Email"
-                        FontAttributes="Bold"
-                        TextColor="#365314"/>
+                 Text="Email"
+                 FontAttributes="Bold"
+                 TextColor="#365314"/>
 
                     <Entry
-                        Text="{Binding Email}"
-                        Keyboard="Email"
-                        BackgroundColor="#F9FAFB"
-                        TextColor="#111827"/>
+                 Text="{Binding Email}"
+                 Keyboard="Email"
+                 BackgroundColor="#F9FAFB"
+                 TextColor="#111827"/>
 
                 </VerticalStackLayout>
 
             </Frame>
 
             <!-- SALVA -->
-            <Button
-                Text="Salva Modifiche"
-                Command="{Binding SalvaCommand}"
-                HeightRequest="56"
-                CornerRadius="22"
-                FontSize="18"
-                FontAttributes="Bold"
-                BackgroundColor="#A3D214"
-                TextColor="White"
-                IsEnabled="{Binding IsNotBusy}"/>
+            <!--<Button
+         Text="Salva Modifiche"
+         Command="{Binding SalvaCommand}"
+         HeightRequest="56"
+         CornerRadius="22"
+         FontSize="18"
+         FontAttributes="Bold"
+         BackgroundColor="#A3D214"
+         TextColor="White"
+         IsEnabled="{Binding IsNotBusy}"/>-->
 
             <!-- STORICO -->
             <Button
-                Text="Storico Segnalazioni"
-                Command="{Binding ApriStoricoCommand}"
-                HeightRequest="56"
-                CornerRadius="22"
-                FontSize="18"
-                FontAttributes="Bold"
-                BackgroundColor="#D9F99D"
-                TextColor="#365314"
-                IsEnabled="{Binding IsNotBusy}"/>
+         Text="Storico Segnalazioni"
+         Command="{Binding ApriStoricoCommand}"
+         HeightRequest="56"
+         CornerRadius="22"
+         FontSize="18"
+         FontAttributes="Bold"
+         BackgroundColor="#D9F99D"
+         TextColor="#365314"
+         IsEnabled="{Binding IsNotBusy}"/>
 
             <!-- LOGOUT -->
             <Button
-                Text="Logout"
-                Command="{Binding LogoutCommand}"
-                HeightRequest="56"
-                CornerRadius="22"
-                FontSize="18"
-                FontAttributes="Bold"
-                BackgroundColor="#EF4444"
-                TextColor="White"
-                IsEnabled="{Binding IsNotBusy}"/>
+         Text="Logout"
+         Command="{Binding LogoutCommand}"
+         HeightRequest="56"
+         CornerRadius="22"
+         FontSize="18"
+         FontAttributes="Bold"
+         BackgroundColor="#EF4444"
+         TextColor="White"
+         IsEnabled="{Binding IsNotBusy}"/>
 
         </VerticalStackLayout>
-
-    </layouts:PageLayout>
-
+       
+    </Grid>
 </ContentPage>

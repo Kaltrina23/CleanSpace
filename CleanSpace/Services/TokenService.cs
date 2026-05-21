@@ -15,6 +15,10 @@ public class TokenService
 
     private const string CognomeKey = "user_cognome";
 
+    private const string EmailKey = "user_email";
+    private const string IdKey = "user_id";
+    
+
     private const string GuestKey = "is_guest";
 
     public async Task SaveAccessToken(string token)
@@ -68,7 +72,12 @@ public class TokenService
         return await SecureStorage.GetAsync(
             NomeKey);
     }
-
+    public async Task<string?> GetID()
+    {
+        return await SecureStorage.GetAsync(
+            IdKey);
+    }
+ 
     public async Task SaveCognome(string cognome)
     {
         await SecureStorage.SetAsync(
@@ -81,6 +90,21 @@ public class TokenService
         return await SecureStorage.GetAsync(
             CognomeKey);
     }
+
+
+    public async Task SaveEmail(string email)
+    {
+        await SecureStorage.SetAsync(
+            EmailKey,
+            email ?? "");
+    }
+
+    public async Task<string?> GetEmail()
+    {
+        return await SecureStorage.GetAsync(
+            EmailKey);
+    }
+
 
     // GUEST
     public async Task SetGuest(bool isGuest)
@@ -111,6 +135,7 @@ public class TokenService
         SecureStorage.Remove(NomeKey);
 
         SecureStorage.Remove(CognomeKey);
+        SecureStorage.Remove(EmailKey);
 
         SecureStorage.Remove(GuestKey);
     }
